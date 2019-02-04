@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="ru" manifest="manifest.appcache.php">
+<head>
+    <meta charset="utf-8"/>
+
+<!--     <link rel="manifest" href="manifest.json"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+
+    <title>Moto Helplist</title>
+    <meta name="description" content="Хелп-лист в твоем телефоне">    
+    <meta name="apple-mobile-web-app-title" content="Moto Helplist">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"> 
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="img/logo_196.png"> <!-- на экране -->
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" sizes="196x196" href="img/logo_196.png">
+    <link rel="icon" sizes="1024x1024" href="img/logo_1024.png"> 
+
+    <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" /> 
+
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/croppie.css" /> 
+   
+
+</head>
+
+<body>
+    <div class="popup popup-inactive">
+      <div class="view navbar-fixed">
+        <div class="pages">
+          <div class="page">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="center" style="left: 106px;">Скрыть меня</div>
+                <div class="right"><a href="#" class="link close-popup">Done</a></div>
+              </div>
+            </div>
+            <div class="page-content">
+              <div class="content-block">
+                <p>Твой номер телефона будет скрыт от других участников Moto Helplist.</p>
+                <p>Однако тебе станут недоступны следующие функции:
+                    <ul>
+                        <li>возможность пользоваться хелп-листом</li>
+                        <li>возможность видеть других участников на карте</li>
+                        <li>возможность звонить другим участникам</li>
+                    </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+ 
+  
+    <div class="popup popup-manifest">
+      <div class="view navbar-fixed">
+        <div class="pages">
+          <div class="page">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="center" style="left: 106px;">Пользовательское соглашение</div>
+              </div>
+            </div>
+            <div class="page-content">
+                <div class="content-block-title">Политика использования<br>персональных данных</div>        
+                <div class="content-block">
+                    <p>Мы не собираем Ваши персональные данные, но по закону все равно должны показывать Вам этот текст. Не указывайте в поле "Ник для чата" свои имя и фамилию и все будет хорошо.</p>
+                    <p>Ваш номер телефона — это Ваш единственный идентификатор в Moto Helplist. Если Вы участник хелп-листа, то другие участники смогут связаться с Вами только позвонив вам на этот номер. </p>
+                    <p>Конечно, если все хорошо, они смогут написать Вам в чате внутри программы, но если у них что-то случилось на трассе и в этом месте нет интернета? Поэтому Ваш номер телефона виден всем остальным участникам Moto Helplist.</p>
+                    <p>Вы можете скрыть свой номер телефона от других участников, но в этом случае Вы не сможете пользоваться хелп-листом и видеть других участников на карте. Все остальные функции Moto Helplist остаются доступными.</p>
+                    <p>Ваш номер телефона, город и ник хранятся у нас и никогда не передаются третьей стороне. Исключение составляют Ваши сиюминутные координаты, которые передаются Google каждый раз, когда Вы включаете определение своего местоположения. Ознакомиться с условиями использования карт Google Вы можете на веб-сайте Google Maps.</p>
+                    <p>По желанию Вы сможете поделиться с другими пользователями своими текущими координатами на карте. Вы сами определяете, когда и с кем будете делиться ими, выставляя соответствующие галочки.</p>
+                    <p>Факт Вашей регистрации в Moto Helplist будет означать Ваше согласие с этими условиями. В случае Вашего несогласия, просто закройте эту страницу.</p>
+                </div>
+                    
+                <div class="content-block-title">И еще немаловажно</div>
+        
+                <div class="content-block">            
+                    <p>Все, что Вы напишете в интернете, может быть использовано против Вас. Вы и только Вы ответственны за размещенную Вами информацию. При выявлении запрещенной информации она подлежит удалению, а аккаунт разместившего ее пользователя блокировке.</p>
+                    <p>Moto Helplist является организатором общения между пользователями и ни при каких обстоятельствах не отвечает за информацию, размещенную пользователями.</p>
+                    <p>Действия, совершенные с использованием Вашего логина и пароля, расцениваются как Ваши. Moto Helplist принимает все необходимые и достаточные меры для сохранения Ваших логина и пароля в тайне, однако ответственность за обеспечение сохранности Ваших учетных данных возлагается на Вас. </p>
+                    <p>Фактом надлежащего уведомления пользователя является факт регистрации пользователя в Moto Helplist.</p>
+                    <p>Текст настоящего Соглашения всегда доступен на странице регистрации.</p>
+                </div>
+                <div class="content-block"><a href="#" class="button close-popup">Ok</a></div>                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  
+
+
+    <!-- add_hotel -->
+    <div class="popup add_hotel">
+        <div class="content-block">
+            <form name="hotel" class="add_poi" id="form_hotel"> 
+                <div class="content-block-title no-margin">Добавить / редактировать отель</div>               
+                <div class="list-block">
+                    <ul>
+                        <li>
+                            <div class="item-inner">
+                                <div class="item-title label">Координаты</div>
+                                <div class="item-input">
+                                    <input type="text" name="latlng" placeholder="перемести указатель на карте" onclick="add_poi('hotel')">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-inner">
+                                <div class="item-title label">Название</div>
+                                <div class="item-input">
+                                    <input required type="text" name="name" placeholder="обязательно">
+                                </div>
+                            </div>
+                        </li>        
+                        <li>
+                            <div class="item-inner">
+                                <div class="item-title label">Цена</div>
+                                <div class="item-input">
+                                    <input type="text" name="price" placeholder="за номер в сутки: от-до">
+                                </div>
+                            </div>
+                        </li>                
+                        <li>
+                            <div class="item-inner">
+                                <div class="item-title label">Телефон</div>
+                                <div class="item-input">
+                                    <input type="tel" name="phone1" placeholder="с кодом страны">
+                                </div>
+                            </div>
+                        </li>                        
+                        <li>
+                            <div class="item-inner">
+                                <div class="item-title label">Телефон</div>
+                                <div class="item-input">
+                                    <input type="tel" name="phone2" placeholder="…еще телефон?">
+                                </div>
+                            </div>
+                        </li>       
+                        <p></p>        
+                        <div class="row no-gutter">
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Внутр.паркинг</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="parking" name="parking" value="1" type="checkbox">
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Wi-Fi</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="wifi" name="wifi" value="1" type="checkbox">
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>                                 
+                        <div class="row no-gutter">
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Кондиционер</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="ac" name="ac" value="1" type="checkbox">
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Баня / сауна</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="sauna" name="sauna" value="1" type="checkbox">
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>
+                        <li class="align-top">
+                            <div class="item-input">
+                                <textarea name="description" placeholder="Подробнее (255 знаков макс., необязательно)"></textarea>
+                            </div>
+                        </li>
+                    </ul>
+                </div>            
+    
+                <div class="row">
+                    <div class="col-50">
+                        <a href="#" onclick="myApp.closeModal();$$('input#add_poi_button').removeClass('disabled')" class="button button-big button-fill color-red">Отмена</a>
+                    </div>
+                    <div class="col-50">
+                        <input type="submit" class="add_poi_button button button-big button-fill color-green" value="Сохранить">
+                    </div>
+                </div> 
+                
+                <input type="hidden" name="task" value="" placeholder="task">
+                <input type="hidden" name="lat" placeholder="lat">
+                <input type="hidden" name="lng" placeholder="lng">
+                <input type="hidden" name="photo" value="" placeholder="photo">
+                <input type="hidden" name="city" value="" placeholder="city">
+                <input type="hidden" name="region" value="" placeholder="region">
+                <input type="hidden" name="map_icon" value="hotel" placeholder="map_icon">
+                <input type="hidden" name="id" value="" placeholder="id_poi">
+            </form>
+    
+            <p class="grey_text">Когда ты добавишь отель на карту, он станет "твоим" и в будущем ты сможешь его редактировать.</p>
+            <p class="grey_text">Пожалуйста убедись что все данные корректны: усталый путник будет надеяться на тебя.</p>
+            <p>&nbsp;</p>
+        </div>
+    </div>
+    
+    <!-- add_parking -->
+    <div class="popup add_parking">
+        <div class="content-block">
+            <form name="parking" class="add_poi"  id="form_parking"> 
+                <div class="content-block-title no-margin">Добавить / редактировать паркинг</div>               
+                <div class="list-block">
+                    <ul>
+                        <li>
+                            <div class="item-inner">
+                                <div class="item-title label">Координаты</div>
+                                <div class="item-input">
+                                    <input type="text" name="latlng" placeholder="перемести указатель на карте" onclick="add_poi('parking')">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-inner">
+                                <div class="item-title label">Цена в сутки</div>
+                                <div class="item-input">
+                                    <input type="text" name="price" placeholder="цена в сутки">
+                                </div>
+                            </div>
+                        </li>                    
+                        <li>
+                            <div class="item-inner">
+                                <div class="item-title label">Телефон</div>
+                                <div class="item-input">
+                                    <input type="tel" name="phone1" placeholder="с кодом страны">
+                                </div>
+                            </div>
+                        </li>                                        
+                        <li>
+                            <div class="item-inner">
+                                <div class="item-title label">Телефон</div>
+                                <div class="item-input">
+                                    <input type="tel" name="phone2" placeholder="еще телефон?">
+                                </div>
+                            </div>
+                        </li>        
+                        <p></p>        
+                        <div class="row no-gutter">
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Доступ 24/7</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="access" name="access" value="1" type="checkbox">
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Камеры</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="camera" name="camera" value="1" type="checkbox">
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>                                 
+                        <div class="row no-gutter">
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Трезвая охрана</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="security" name="security" value="1" type="checkbox">
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Много мотомест</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="big" name="big" value="1" type="checkbox">
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>                                                                        
+                        <li class="align-top">
+                            <div class="item-input">
+                                <textarea name="description" placeholder="Подробнее (255 знаков макс., необязательно)"></textarea>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-50">
+                        <a href="#" onclick="myApp.closeModal();$$('input#add_poi_button').removeClass('disabled')" class="button button-big button-fill color-red">Отмена</a>
+                    </div>
+                    <div class="col-50">
+                        <input type="submit" class="add_poi_button button button-big button-fill color-green" value="Сохранить">
+                    </div>
+                </div> 
+                <input type="hidden" name="task" placeholder="task">
+                <input type="hidden" name="lat" placeholder="lat">
+                <input type="hidden" name="lng" placeholder="lng">
+                <input type="hidden" name="photo" value="" placeholder="photo">
+                <input type="hidden" name="city" value="" placeholder="city">     
+                <input type="hidden" name="region" value="" placeholder="region">                                           
+                <input type="hidden" name="map_icon" value="parking" placeholder="map_icon">      
+                <input type="hidden" name="id" value="" placeholder="id_poi">              
+            </form>
+            <p class="grey_text">Когда ты добавишь паркинг на карту, он станет "твоим" и в будущем ты сможешь его редактировать.</p>
+            <p class="grey_text">Пожалуйста убедись что все данные корректны: чтобы путнику не пришлось плутать в незнакомом городе.</p>
+        </div>                    
+    </div>
+    
+    <!-- add_place -->
+    <div class="popup add_place">
+        <div class="content-block">
+            <form name="place" class="add_poi"  id="form_place"> 
+                <div class="content-block-title no-margin">Добавить место сбора</div>               
+                <div class="list-block">
+                    <ul>
+                        <li>
+                            <div class="item-inner">
+                                <div class="item-title label">Координаты</div>
+                                <div class="item-input">
+                                    <input type="text" name="latlng" placeholder="перемести указатель на карте" onclick="add_poi('place')">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-inner">
+                                <div class="item-title label">Название</div>
+                                <div class="item-input">
+                                    <input required type="text" name="name" placeholder="обязательно">
+                                </div>
+                            </div>
+                        </li>                    
+                        <li class="align-top">
+                            <div class="item-input">
+                                <textarea name="description" placeholder="Подробнее (255 знаков макс., необязательно)"></textarea>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-50">
+                        <a href="#" onclick="myApp.closeModal();$$('input#add_poi_button').removeClass('disabled')" class="button button-big button-fill color-red">Отмена</a>
+                    </div>
+                    <div class="col-50">
+                        <input type="submit" class="add_poi_button button button-big button-fill color-green" value="Сохранить">
+                    </div>
+                </div> 
+                <input type="hidden" name="task" value="" placeholder="task">               
+                <input type="hidden" name="lat" placeholder="lat">
+                <input type="hidden" name="lng" placeholder="lng">
+                <input type="hidden" name="photo" value="" placeholder="photo">
+                <input type="hidden" name="city" value="" placeholder="city">      
+                <input type="hidden" name="region" value="" placeholder="region">
+                <input type="hidden" name="map_icon" value="place" placeholder="map_icon">        
+                <input type="hidden" name="id" value="" placeholder="id_poi">            
+            </form>
+            <p class="grey_text">Когда ты добавишь место тусовки на карту, оно станет "твоим" и в будущем ты сможешь его редактировать.</p>
+            <p class="grey_text">Пожалуйста убедись что все данные корректны: приезжему коллеге и тусануться хочется, и дальше ехать надо.</p>
+        </div>
+    </div>
+    
+    <!-- add_service -->
+    <div class="popup add_service">
+        <div class="content-block">
+            <form name="service" class="add_poi"  id="form_service"> 
+                <div class="content-block-title no-margin">Добавить мото-сервис </div>               
+                <div class="list-block">
+                    <ul>
+                        <li>
+                            <div class="item-inner">
+                                <div class="item-title label">Координаты</div>
+                                <div class="item-input">
+                                    <input type="text" name="latlng" placeholder="перемести указатель на карте" onclick="add_poi('service')">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-inner">
+                                <div class="item-title label">Название</div>
+                                <div class="item-input">
+                                    <input required type="text" name="name" placeholder="обязательно">
+                                </div>
+                            </div>
+                        </li>        
+                        <li>
+                            <div class="item-inner">
+                                <div class="item-title label">Телефон</div>
+                                <div class="item-input">
+                                    <input type="tel" name="phone1" placeholder="с кодом страны">
+                                </div>
+                            </div>
+                        </li>                                        
+                        <li>
+                            <div class="item-inner">
+                                <div class="item-title label">Телефон</div>
+                                <div class="item-input">
+                                    <input type="tel" name="phone2" placeholder="еще телефон?">
+                                </div>
+                            </div>
+                        </li>        
+                        <p></p>        
+                        <div class="row no-gutter">
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Электрика</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="electric" name="electric" value="1" type="checkbox"  checked>
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Сварка</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="weld" name="weld" value="1" type="checkbox" checked>
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>                                 
+                        <p></p>        
+                        <div class="row no-gutter">
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Капиталка</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="renewal" name="renewal" value="1" type="checkbox">
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Глубокий тюнинг</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="tuning" name="tuning" value="1" type="checkbox">
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>                                 
+                        <div class="row no-gutter">
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Немцы</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="germans" name="germans" value="1" type="checkbox" checked>
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Японцы</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="japanese" name="japanese" value="1" type="checkbox" checked>
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>                                 
+                        <div class="row no-gutter">
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Китайцы</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="chinese" name="chinese" value="1" type="checkbox">
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Расходники</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="stock" name="stock" value="1" type="checkbox">
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>                                 
+                        <li class="align-top">
+                            <div class="item-input">
+                                <textarea name="description" placeholder="Подробнее (255 знаков макс., необязательно)"></textarea>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-50">
+                        <a href="#" onclick="myApp.closeModal();$$('input#add_poi_button').removeClass('disabled')" class="button button-big button-fill color-red">Отмена</a>
+                    </div>
+                    <div class="col-50">
+                        <input type="submit" class="add_poi_button button button-big button-fill color-green" value="Сохранить">
+                    </div>
+                </div> 
+                <input type="hidden" name="task" value="" placeholder="task">            
+                <input type="hidden" name="lat" placeholder="lat">
+                <input type="hidden" name="lng" placeholder="lng">
+                <input type="hidden" name="photo" value="" placeholder="photo">
+                <input type="hidden" name="city" value="" placeholder="city">
+                <input type="hidden" name="region" value="" placeholder="region">
+                <input type="hidden" name="map_icon" value="service" placeholder="map_icon">
+                <input type="hidden" name="id" value="" placeholder="id_poi">            
+            </form>
+            <p class="grey_text">Когда ты добавишь сервис на карту, он станет "твоим" и в будущем ты сможешь его редактировать.</p>
+            <p class="grey_text">Пожалуйста убедись что все данные корректны: чтобы путнику не пришлось плутать в незнакомом городе.</p>
+        </div>
+    </div>
+    
+    <!-- add_tireservice -->
+    <div class="popup add_tireservice">
+        <div class="content-block">
+            <form name="tireservice" class="add_poi"  id="form_tireservice"> 
+                <div class="content-block-title no-margin">Добавить мото-шиномонтаж</div>               
+                <div class="list-block">
+                    <ul>
+                        <li>
+                            <div class="item-inner">
+                                <div class="item-title label">Координаты</div>
+                                <div class="item-input">
+                                    <input type="text" name="latlng" placeholder="перемести указатель на карте" onclick="add_poi('tireservice')">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-inner">
+                                <div class="item-title label">Телефон</div>
+                                <div class="item-input">
+                                    <input type="tel" name="phone1" placeholder="с кодом страны">
+                                </div>
+                            </div>
+                        </li>                                        
+                        <li>
+                            <div class="item-inner">
+                                <div class="item-title label">Телефон</div>
+                                <div class="item-input">
+                                    <input type="tel" name="phone2" placeholder="еще телефон?">
+                                </div>
+                            </div>
+                        </li>        
+                        <div class="row no-gutter">
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Подкат</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="podkat" name="podkat" value="1" type="checkbox"  checked>
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Правка/варка дисков</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="rims" name="rims" value="1" type="checkbox">
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>        
+                        <div class="row no-gutter">
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Балансировка</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="balancer" name="balancer" value="1" type="checkbox"  checked>
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="col-50">
+                                <li>
+                                    <div class="1item-title 1label">Варка покрышек</div>            
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input id="tire_repair" name="tire_repair" value="1" type="checkbox">
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>
+                        <li class="align-top">
+                            <div class="item-input">
+                                <textarea name="description" placeholder="Подробнее (255 знаков макс., необязательно)"></textarea>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-50">
+                        <a href="#" onclick="myApp.closeModal();$$('input#add_poi_button').removeClass('disabled')" class="button button-big button-fill color-red">Отмена</a>
+                    </div>
+                    <div class="col-50">
+                        <input type="submit" class="add_poi_button button button-big button-fill color-green" value="Сохранить">
+                    </div>
+                </div> 
+                <input type="hidden" name="task" value="" placeholder="task">            
+                <input type="hidden" name="lat" placeholder="lat">
+                <input type="hidden" name="lng" placeholder="lng">
+                <input type="hidden" name="photo" value="" placeholder="photo">
+                <input type="hidden" name="city" value="" placeholder="city">
+                <input type="hidden" name="region" value="" placeholder="region">
+                <input type="hidden" name="map_icon" value="tireservice" placeholder="map_icon">    
+                <input type="hidden" name="id" value="" placeholder="id_poi">                        
+            </form>
+            <p class="grey_text">Когда ты добавишь шиномонтаж на карту, он станет "твоим" и в будущем ты сможешь его редактировать.</p>
+            <p class="grey_text">Пожалуйста убедись что все данные корректны: чтобы человеку не пришлось таскаться по городу с колесом на плечах.</p>        
+        </div>
+    </div>
+        
+ 
+        
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-cover layout-dark">
+        <div class="1content-block">
+            <div class="content-block-title">Меню</div>
+            <div class="list-block">
+                <ul>
+
+                    <li>
+                        <a href="onair.html" class="item-link close-panel"> 
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-comment"></i></div>
+                                <div class="item-inner"> 
+                                    <div class="item-title">Эфир и личка</div>
+                                    <span id="totalUnreadMsg" class="badge hide bg-red"></span>                                    
+                                </div>
+                            </div>
+                        </a>
+                    </li>                    
+
+                    <li>
+                        <a href="map.html" class="item-link close-panel"> 
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-url"></i></div>
+                                <div class="item-inner"> 
+                                    <div class="item-title">Карта</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>                    
+                    
+
+                    <li>
+                        <a href="feed.html" class="item-link close-panel"> 
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-news"></i></div>
+                                <div class="item-inner"> 
+                                    <div class="item-title">Новости</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>                                        
+
+                    <li>
+                        <a href="subscribe.html" class="item-link close-panel"> 
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-active"></i></div>
+                                <div class="item-inner"> 
+                                    <div class="item-title">Подписки</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>                                                            
+
+                    <li>
+                        <a href="help_list.html" class="item-link close-panel"> 
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-helplist"></i></div>
+                                <div class="item-inner"> 
+                                    <div class="item-title">Хелп-лист</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="friends.html" class="item-link close-panel"> 
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-friends"></i></div>
+                                <div class="item-inner"> 
+                                    <div class="item-title">Друзья</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="trip.html" class="item-link close-panel"> 
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-excursion"></i></div>
+                                <div class="item-inner"> 
+                                    <div class="item-title">В путь</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>                    
+
+                    <li>
+                        <a href="profile.html" class="item-link close-panel"> 
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner"> 
+                                    <div class="item-title">Профиль</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>            
+            
+                    <li>
+                        <a href="settings.html" class="item-link close-panel"> 
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-settings"></i></div>
+                                <div class="item-inner"> 
+                                    <div class="item-title">Настройки</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>                        
+
+                    <li>
+                        <a href="donate.html" class="item-link close-panel"> 
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-donate"></i></div>
+                                <div class="item-inner"> 
+                                    <div class="item-title">Поддержи проект</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="bugreport.html" class="item-link close-panel"> 
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-bug"></i></div>
+                                <div class="item-inner"> 
+                                    <div class="item-title">Прием багов</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>                    
+            
+                    <li>
+                        <a href="index.html" class="item-link close-panel"> 
+                            <div class="item-content" onclick="exit()">
+                                <div class="item-media"><i class="icon icon-form-exit"></i></div>
+                                <div class="item-inner"> 
+                                    <div class="item-title">Выход</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>            
+            
+                </ul>
+            </div>
+        </div>
+        
+        <!--div class="content-block">
+            <p>Текст внизу левой панели</p>
+        </div-->
+
+    </div>
+
+    <!-- Right panel with cover effect-->
+    <!--div class="panel panel-right panel-cover">
+        <p>Правая панель</p>
+    </div-->
+
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+<!--
+            <div class="navbar-inner">
+                <div class="center sliding"></div>
+                <div class="right"></div>
+            </div>
+-->
+        </div>
+
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">            
+          <!-- Page, data-page contains page name-->
+            <!-- Scrollable page content-->
+                
+            <!-- начало --> 
+
+                <div data-page="index" class="page no-navbar no-toolbar">
+<div style="width:100%; position: absolute;top: 10%;left: 50%;transform: translate(-50%, 10%);text-align: center;margin-left: auto;margin-right: auto;">
+            
+                        <img src="img/logo_big.png">
+                        
+                        
+<div class="content-block-title">Нет интернета?</div><div class="content-block">
+    <p>Если нет связи с интернет, можно пользоваться хелп-листом</p>
+<!--     <p><a href="help_list.html" class="button">Хелп-лист</a></p> -->
+</div><br><br>
+
+                        
+            
+                    </div>                </div>
+    
+            <!-- конец --> 
+
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    
+<!-- templates --> 
+
+                
+                
+    <script type="text/template7" id="digest">    
+        {{#each channels}}      
+            <li class="swipeout" id="{{id_channel}}" data-urgency="{{id_urgency}}">
+                <div class="item-link item-content swipeout-content"  onclick="getChannelMessages({{id_channel}},'{{channel_name}}', 0, {{type_channel}})">
+                    <div class="item-media">
+                        <div class="avatar-wrapper">
+                            <span id="unreadChannelBadge-{{id_channel}}" class="badge hide bg-red"></span>                                    
+                            <!--span id="unreadChannelBadge-{{id_channel}}" class="badge {{#js_compare "this.unreaded === 0"}}hide{{/js_compare}} bg-red">{{unreaded}}</span-->
+                            <img class="lazy lazy-fadeIn avatar {{#js_compare "this.gender === 1"}}fe{{/js_compare}}male" src="//app.motohelplist.com/img/avatar/{{id_user}}.jpg" data-src="//app.motohelplist.com/img/avatar/{{id_user}}.jpg">
+                        </div>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title-row">
+                            <div class="item-title">{{channel_name}}</div>
+                            <div class="item-after"></div>
+                        </div>
+                        <div class="item-subtitle {{#js_compare "this.gender === 1"}}fe{{/js_compare}}male" id="{{id_user}}">
+                            {{#js_compare "this.id_urgency > 0"}}
+                                <span class="badge {{#js_compare "this.id_urgency === 3"}}bg-green{{/js_compare}}{{#js_compare "this.id_urgency === 2"}}bg-red{{/js_compare}}{{#js_compare "this.id_urgency === 1"}}bg-orange{{/js_compare}}">{{urgency}}</span>
+                            {{/js_compare}}
+                            {{name}} <span class="gray_text" time="{{ts}}"></span>
+                        </div>
+                        <div class="item-text">{{text}}</div>
+                    </div>
+                </div>
+                <div class="swipeout-actions-right">
+                    {{#js_compare "this.is_subscribe === 0"}}
+                        <a href="#" onclick="subscribe({{id_channel}})" class="bg-blue swipeout-close">Подписаться</a>
+                    {{else}}
+                        <a href="#" onclick="unsubscribe({{id_channel}})" class="bg-red swipeout-close">Отписаться</a>                                            
+                    {{/js_compare}}
+
+                        <a href="#" class="getUserInfo bg-orange swipeout-close" onclick="getProfile({{id_user}})">Профиль {{name}}</a>
+                </div>  
+                <!--div class="sortable-handler"></div-->
+            </li>
+        {{/each}}
+    </script>
+    
+    
+    <script type="text/template7" id="digest_personal">    
+        {{#each channels}}      
+            <li class="swipeout">
+                <div href="#" class="item-link item-content swipeout-content"  onclick="getChannelMessages(0,'{{name}}',{{id_user}})">
+                    <div class="item-media">
+                        <div class="avatar-wrapper">
+                            <span id="unreadPrivateBadge-{{id_user}}" class="badge hide bg-red"></span>
+                            <!--span id="unreadPrivateBadge-{{id_user}}" class="badge {{#js_compare "this.unreaded === 0"}}hide{{/js_compare}} bg-red">{{unreaded}}</span-->                                    
+                            <img width="100%" class="lazy avatar {{#js_compare "this.gender === 1"}}fe{{/js_compare}}male" src="//app.motohelplist.com/img/avatar/{{id_user}}.jpg" data-src="//app.motohelplist.com/img/avatar/{{id_user}}.jpg">
+                        </div>
+                    </div>
+                    <div class="item-inner"  id="">
+                        <div class="item-title-row">
+                        <div class="item-title {{#js_compare "this.gender === 1"}}fe{{/js_compare}}male" id="{{id_user}}">
+                            {{name}}
+                        </div>
+                            <div class="item-after"></div>
+                        </div>
+                        <div class="item-subtitle" id="">
+                            <span class="gray_text" time="{{ts}}"></span>
+                        </div>
+                        <div class="item-text">{{text}}</div>
+                    </div>
+                </div>
+                <div class="swipeout-actions-right">
+                    <a href="tel:+{{phone}}" class="getUserInfo bg-green swipeout-close external" >Позвонить {{name}}</a>                            
+                    <a href="#" class="swipeout-delete" onclick="myApp.alert('продумать как убить чат только для этого юзера и больше не грузить его c сервера')">Удалить</a>
+                </div>                    
+            </li>
+        {{/each}}
+    </script>    
+    
+    
+
+
+
+    <script type="text/template7" id="channelmembers">    
+        <ul>
+            {{#each members}}
+                <li class="swipeout" data-id_user="{{id_user}}">
+                    <a href="#" class="item-link item-content swipeout-content" onclick="getProfile({{id_user}})">
+                        <div class="item-media">
+                            <div class="avatar-wrapper">
+                                <img class="lazy lazy-fadeIn avatar {{#js_compare "this.gender == 1"}}fe{{/js_compare}}male" src="//app.motohelplist.com/img/avatar/{{id_user}}.jpg" data-src="//app.motohelplist.com/img/avatar/{{id_user}}.jpg">
+                            </div>
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title {{#js_compare "this.gender == 1"}}fe{{/js_compare}}male" id="{{id_user}}">{{name}}</div>
+                                <div class="item-after"></div>
+                            </div>
+                            <!--div class="item-text">Заходил{{#js_compare "this.gender == 1"}}а{{/js_compare}} <span time="{{ts}}"></span></div-->
+                            <div class="item-text">{{city}}</div>
+                            <div class="item-text">{{motorcycle}}</div>
+                        </div>
+                    </a>
+                    <div class="swipeout-actions-right">
+<!--                             <a href="#" class="bg-red" onclick="deleteMemberFromChannel({{id_user}},'{{name}}')">Удалить</a> -->
+<a href="#" class="swipeout-delete" data-confirm-title="Удалить {{name}}?" data-confirm="{{name}} больше не сможет читать этот канал и отвечать в него." data-close-on-cancel="true">Удалить</a>
+
+                    </div>                    
+                </li>
+            {{/each}}
+        </ul>
+    </script>    
+    
+
+
+
+
+
+
+    <script type="text/template7" id="friends">    
+        <ul>
+            {{#each friends}}      
+                <li class="swipeout" id="friend_{{id_user}}">
+                    <a href="#" class="item-link item-content swipeout-content" onclick="getProfile({{id_user}})">
+                        <div class="item-media">
+                            <div class="avatar-wrapper">
+                                <img class="lazy lazy-fadeIn avatar {{#js_compare "this.gender === 1"}}fe{{/js_compare}}male" src="//app.motohelplist.com/img/avatar/{{id_user}}.jpg" data-src="//app.motohelplist.com/img/avatar/{{id_user}}.jpg">
+                            </div>
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title {{#js_compare "this.gender === 1"}}fe{{/js_compare}}male" id="{{id_user}}">{{name}}</div>
+                                <div class="item-after"></div>
+                            </div>
+                            <div class="item-text">Заходил{{#js_compare "this.gender === 1"}}а{{/js_compare}} <span time="{{ts}}"></span></div>
+                            <div class="item-subtitle" id="{{id_city}}">{{city}}</div>
+                            <div class="item-subtitle" id="{{id_motorcycle}}">{{motorcycle}}</div>
+                        </div>
+                    </a>
+                    <div class="swipeout-actions-right">
+                            <a href="#" class="bg-green swipeout-close" onclick="getChannelMessages(0,'{{name}}',{{id_user}})">Личка</a>
+                            {{#if phone}}<a href="tel:+{{phone}}" class="bg-red swipeout-close external">Позвонить</a>{{/if}}
+                    </div>                    
+                </li>
+            {{/each}}
+        </ul>
+    </script>    
+    
+    
+
+    <script type="text/template7" id="invite_friends">
+        {{#each invitefriends}}      
+            <option id="add_{{id_user}}" role="invitefriend" value="{{id_user}}" /*data-option-image="//app.motohelplist.com/img/avatar/{{id_user}}.jpg"*/>{{name}}</option>
+        {{/each}}
+    </script>    
+
+
+    <script type="text/template7" id="add_members">
+        {{#each addmembers}}      
+            <option id="add_{{id_user}}" role="addmember" value="{{id_user}}">{{name}}</option>
+        {{/each}}
+    </script>    
+
+    
+    
+    <script type="text/template7" id="profile_view">    
+        {{#each profile}}      
+            <div class="content-block-title">О себе</div>
+            <div class="list-block media-list">
+                <ul>
+                    <li class="item-content"> 
+                        <div class="item-media">
+                            <!--img width="100px" id="avatar" class="lazy lazy-fadeIn" alt="avatar"/-->
+                            <img class="lazy lazy-fadeIn" id="avatar" src="//app.motohelplist.com/img/avatar/no_avatar.svg" data-src="//app.motohelplist.com/img/avatar/no_avatar.svg">
+                        </div>                            
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title {{#js_compare "this.gender == 1"}}fe{{/js_compare}}male">{{name}}</div>
+                            </div>
+                            <div class="item-subtitle">
+                                {{#js_compare "this.gender == 0"}}Байкер{{/js_compare}}
+                                {{#js_compare "this.gender == 1"}}Байкерша{{/js_compare}}
+                                {{#if is_friend}}(в друзьях){{/if}}
+                            </div>
+                            <div class="item-text gray_text">Заходил{{#js_compare "this.gender == 1"}}а{{/js_compare}} <span time="{{date_last_login}}"></span></div>                      
+                            {{#if status}}<div class="item-text gray_text">Статус: {{status}}</div>{{/if}}
+                        </div>            
+                    </li>
+                    
+                    <li class="item-content"> 
+                        <div class="item-inner">
+                            <div class="item-subtitle">{{city}}</div>            
+                            <div class="item-subtitle">{{motorcycle}} {{motorcycle_more}}</div>
+                            <div class="gray_text">{{description}}</div>                    
+                        </div>
+                    </li>        
+                </ul>
+            </div>
+
+            <div class="content-block">
+                  <p class="no-margin"><a href="#" class="button" id="callto">Дополнительные действия</a></p>
+            </div>      
+
+            <div class="content-block-title">Может помочь</div>
+            <div class="list-block media-list inset no-margin">
+                {{#js_compare "this.help_repair == 1"}}<span class="red tip">Ремонт</span>{{/js_compare}}
+                {{#js_compare "this.help_garage == 1"}}<span class="orange tip">Гараж</span>{{/js_compare}}
+                {{#js_compare "this.help_food == 1"}}<span class="orange tip">Поесть</span>{{/js_compare}}
+                {{#js_compare "this.help_bed == 1"}}<span class="red tip">Ночлег</span>{{/js_compare}}
+                {{#js_compare "this.help_beer == 1"}}<span class="green tip">По пиву</span>{{/js_compare}}
+                {{#js_compare "this.help_strong == 1"}}<span class="green tip">Покрепче</span>{{/js_compare}}
+                {{#js_compare "this.help_party == 1"}}<span class="blue tip">Компания</span>{{/js_compare}}
+                {{#js_compare "this.help_excursion == 1"}}<span class="blue tip">Экскурсия</span>{{/js_compare}}</div>          
+            </div>
+        {{/each}}
+    </script>        
+    
+    
+    
+    
+    <script type="text/template7" id="feed">    
+        {{#each feeds}}
+            <li class="swipeout">
+                <div class="item-link item-content swipeout-content">
+                    <div class="item-media">
+                        <div class="avatar-wrapper">
+                            <img class="lazy lazy-fadeIn avatar {{#js_compare "this.gender === 1"}}fe{{/js_compare}}male" src="//app.motohelplist.com/img/avatar/{{id_user}}.jpg" data-src="//app.motohelplist.com/img/avatar/{{id_user}}.jpg">
+                        </div>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title">
+                            <div class="item-title {{#js_compare "this.gender === '1'"}}fe{{/js_compare}}male">{{name}} <span class="gray_text">{{city}}</span></div>
+                            <!--div class="item-after"></div-->
+                        </div>
+                        <div class="item-text" time="{{ts}}"></div>
+                        <!--div class="text-feed item-text">
+                            type_feed: {{type_feed}} id_object: {{id_object}} name_object: {{name_object}}
+                        </div-->
+
+                        {{#js_compare "this.type_feed === 1"}}
+                            <div class="gray_text text-feed">Жители {{name_object}} приветствуют земляка {{name}}</div>
+                        {{/js_compare}}
+                        
+                        {{#js_compare "this.type_feed === 2"}}
+                            <div class="gray_text text-feed">Владельцы {{name_object}} поздравляют {{name}} с удачным приобретением</div>
+                        {{/js_compare}}
+
+                        {{#js_compare "this.type_feed === 5"}}
+                            <div class="text-feed">{{text}}</div>
+                        {{/js_compare}}
+
+                        {{#js_compare "this.type_feed === 6"}}
+                            <div class="gray_text text-feed">{{name}} добавил в друзья {{name_object}}</div>
+                        {{/js_compare}}                                
+
+                        {{#js_compare "this.type_feed === 7"}}
+                            <div class="gray_text text-feed">{{name}} удалил из друзей {{name_object}}</div>
+                        {{/js_compare}}                                
+
+                        {{#js_compare "this.type_feed === 8"}}
+                            <div class="text-feed"><span class="gray_text">Статус:</span> {{text}}</div>
+                        {{/js_compare}}                                
+
+                    </div>
+                </div>
+                {{#js_compare "this.type_feed === 1"}}
+                    <div class="swipeout-actions-right">
+                        <a href="#" class="bg-green swipeout-close" onclick="getChannelMessages({{id_object}},'{{name_object}}')">Канал {{name_object}}</a>
+                        <a href="#" class="bg-orange swipeout-close" onclick="getProfile({{id_user}})">Профиль {{name}}</a>                            
+                    </div>  
+                {{/js_compare}}                  
+
+                {{#js_compare "this.type_feed === 2"}}
+                    <div class="swipeout-actions-right">
+                        <a href="#" class="bg-gray swipeout-close"  onclick="getChannelMessages({{id_object}},'{{name_object}}')">Канал {{name_object}}</a>
+                        <a href="#" class="bg-orange swipeout-close" onclick="getProfile({{id_user}})">Профиль {{name}}</a>                            
+                    </div>  
+                {{/js_compare}}                                          
+                
+                {{#js_compare "this.type_feed === 5"}}
+                    <div class="swipeout-actions-right">
+                        <a href="#" class="bg-orange swipeout-close" onclick="getProfile({{id_user}})">Профиль {{name}}</a>                            
+                    </div>  
+                {{/js_compare}}                                                                  
+                
+                {{#js_compare "this.type_feed === 6"}}
+                    <div class="swipeout-actions-right">
+                        <a href="#" class="bg-blue swipeout-close" onclick="getProfile({{id_object}})">Профиль {{name_object}}</a>
+                        <a href="#" class="bg-orange swipeout-close" onclick="getProfile({{id_user}})">Профиль {{name}}</a>                            
+                    </div>  
+                {{/js_compare}}                                                                  
+
+                {{#js_compare "this.type_feed === 7"}}
+                    <div class="swipeout-actions-right">
+                        <a href="#" class="bg-blue swipeout-close" onclick="getProfile({{id_object}})">Профиль {{name_object}}</a>
+                        <a href="#" class="bg-orange swipeout-close" onclick="getProfile({{id_user}})">Профиль {{name}}</a>                            
+                    </div>  
+                {{/js_compare}}                                                                                          
+                
+                {{#js_compare "this.type_feed === 8"}}
+                    <div class="swipeout-actions-right">
+                        <a href="#" class="bg-orange swipeout-close" onclick="getProfile({{id_user}})">Профиль {{name}}</a>
+                    </div>  
+                {{/js_compare}}                                                                                                                  
+            </li>
+        {{/each}}
+    </script>
+
+
+
+    <script type="text/template7" id="subscribe">    
+        {{#each subscribe}}
+            <li class="swipeout" id="subscribe_{{id_channel}}">
+                <a href="#" class="item-link item-content swipeout-content"  onclick="getChannelMessages({{id_channel}},'{{channel_name}}',0,{{type_channel}})">
+                    <div class="item-media">
+                        {{#js_compare "this.type_channel === 1"}}
+                            <img src="img/i-form-city-ios.svg" width="44">
+                        {{/js_compare}}
+                        {{#js_compare "this.type_channel === 2"}}
+                            <img src="img/i-form-cycle-ios.svg" width="44">
+                        {{/js_compare}}                                
+                        {{#js_compare "this.type_channel === 3"}}
+                            <img src="img/i-form-private-ios.svg" width="44">
+                        {{/js_compare}}                                                                
+                        {{#js_compare "this.type_channel === 4"}}
+                            <img src="img/i-form-group-ios.svg" width="44">
+                        {{/js_compare}}
+                    </div>
+                    <div class="item-inner"  id="{{id_channel}}">
+                        <div class="item-title-row">
+                            <div class="item-title">{{channel_name}}</div>
+                            <div class="item-after"></div>
+                        </div>
+                        
+                        {{#js_compare "this.type_channel === 1"}}
+                            <div class="gray_text item-subtitle">Канал города</div>
+                        {{/js_compare}}                                                            
+                        {{#js_compare "this.type_channel === 2"}}
+                            <div class="gray_text item-subtitle">Канал владельцев</div>
+                        {{/js_compare}}                        
+                        {{#js_compare "this.type_channel === 3"}}
+                            <div class="gray_text item-subtitle">Приватный канал</div>
+                        {{/js_compare}}
+                        {{#js_compare "this.type_channel === 4"}}
+                            <div class="gray_text item-subtitle">Общий канал</div>
+                        {{/js_compare}}                                                                                    
+                    </div>
+                </a>
+                <div class="swipeout-actions-right">
+                    <a href="#" onclick="unsubscribe({{id_channel}})" class="bg-red swipeout-delete">Отписаться</a>
+                </div>                    
+            </li>
+        {{/each}}
+    </script>
+
+
+
+
+
+
+
+<!-- /templates --> 
+
+
+            
+            
+    <div class="login-screen">
+        <div class="view">
+            <div class="page no-navbar no-toolbar">
+              <div class="page-content login-screen-content">
+                  <p>&nbsp;</p>
+                <div class="login-screen-title">Moto Helplist</div>
+                  <form action="https://app.motohelplist.com/api/v1/" method="GET" class="store-data" id="login_password">
+                    <div class="list-block">
+                      <ul>
+                        <li class="item-content">
+                          <div class="item-inner"> 
+                            <div class="item-title label">Телефон</div>
+                            <div class="item-input">
+                              <input type="tel" name="phone" placeholder="с кодом страны"/>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="item-content">
+                          <div class="item-inner"> 
+                            <div class="item-title label">Пароль</div>
+                            <div class="item-input">
+                              <input type="password" name="password" autocomplete="off" placeholder="без ограничений"/>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="content-block">
+                        <div>Нет пароля? Придумайте его.</div>
+                        <p><a href="#" class="button button-big button-round item-link list-button form-to-json login" id="login">Вход</a></p>
+                    </div>
+
+                    <div class="content-block-title">Нет интернета?</div>
+                    <div class="content-block">
+                        <p>Если нет связи с интернет, можно пользоваться хелп-листом</p>
+                        <p onclick="myApp.closeModal()"><a href="help_list.html" class="button button-round button-fill color-red">Хелп-лист</a></p>
+                    </div>                        
+                    
+                  </form>         
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!-- Links popover -->
+<div class="popover popover-map">
+    <div class="popover-angle"></div>
+    <div class="popover-inner">
+        <div class="list-block">
+            <ul>
+                <li><p class="text-center disabled">Добавить на карту:</p></li>
+                <li><a href="#" onclick="add_poi('place',0);return false" class="list-button item-link">Место сбора байкеров</a></li>
+                <li><a href="#" onclick="add_poi('tireservice',0);return false" class="list-button item-link">Мото-шиномонтаж</a></li>                                
+                <li><a href="#" onclick="add_poi('parking',0);return false" class="list-button item-link">Мото-паркинг</a></li>
+                <li><a href="#" onclick="add_poi('service',0);return false" class="list-button item-link">Мото-сервис</a></li>
+                <li><a href="#" onclick="add_poi('hotel',0);return false" class="list-button item-link">Отель</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+    <div class="hide" id="google-map-script-container"></div>        
+
+<script src="js/Detect.js"></script>
+
+    <script src="js/framework7.min.js"></script>
+    <script src="js/moment.min.js"></script>                    
+    <script src="js/sha1.min.js"></script>        
+
+<!-- <script src="js/jquery.min.js"></script> -->
+
+    <script src="js/helplist.min.js"></script>            
+    <script src="js/onair_digest.min.js"></script>        
+    <script src="js/feed.min.js"></script>            
+    <script src="js/subscribe.js"></script>
+    <script src="js/friends.min.js"></script>
+    <script src="js/croppie.min.js"></script>
+<!--script src="js/exif.js"></script-->
+    <script src="js/gmaps.js"></script>    
+    <script src="js/main.js"></script>
+    <script src="js/messages.min.js"></script>    
+
+    <script src="//maps.google.com/maps/api/js"></script>
+    <script src="js/geometa.min.js"></script>    
+    <script src="js/markerclusterer_compiled.js"></script>        
+    <!--script src="js/modernizr-custom.js"></script-->
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter37988640 = new Ya.Metrika({
+                    id:37988640,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true,
+                    ut:"noindex"
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/37988640?ut=noindex" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+  </body>
+</html>

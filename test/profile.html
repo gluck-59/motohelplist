@@ -1,0 +1,312 @@
+<!-- We don't need full layout here, because this page will be parsed with Ajax-->
+<!-- Top Navbar-->
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left"><a href="#" class="back link icon-only"> <i class="icon icon-back"></i></a></div>
+    <div class="center sliding">Профиль</div>
+    <div class="right">
+      <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <!-- Page, data-page contains page name-->
+  <div data-page="profile" class="page">
+    <!-- Scrollable page content-->
+    <div class="page-content hide-bars-on-scroll">
+        <div class="1">
+            <form id="profile" class="content-block">
+
+                <div class="1" id="avatar_upload">
+                    <input type="file" id="upload" accept="image/*" value="" onclick="">    
+
+                    <div>&nbsp;</div>
+                    <div id="upload-demo"></div>
+                    <div>&nbsp;</div>
+
+                    <p class="buttons-row">
+                        <a href="#" class="upload-result-cancel button button-big button-fill color-gray">Отмена</a>&nbsp;
+                        <a href="#" class="upload-result-delete button button-big button-fill color-red">Удалить</a>&nbsp;                        
+                        <a href="#" class="upload-result button button-big button-fill color-green">Сохранить</a>
+                    </p>
+                </div>
+
+        <div class="list-block media-list no-margin">
+          <ul>
+            <li>
+              <div class="item-link item-content">
+                <div class="item-media"><img id="avatar" class="1avatar" src="//app.motohelplist.com/img/avatar/no_avatar.svg" alt="avatar"/></div>
+                <div class="item-inner">
+                  <div class="item-title-row1">
+        
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-name"></i></div>&nbsp;&nbsp;&nbsp;
+                        <input class="item-title" type="text"  name="name" placeholder="Ник"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="list-block" style="margin: 10px 0;">
+            <ul>          
+              <li>
+                <div class="item-content">
+                  <div class="item-media"><i class="icon icon-form-help"></i></div>
+                  <div class="item-inner"> 
+                    <!--div class="item-title label">Статус</div-->
+                    <div class="item-input">
+                      <input type="text" name="status" placeholder="статус"/>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+        </div>
+              
+        <div class="content-block-title">Участие в хелп-листе</div>
+        <div class="list-block">
+            <ul>
+              <li>
+                <div class="item-content" >
+                  <div class="item-media"><i id="hl-involve-icon" class="icon icon-form-active"></i></div>
+                  <div class="item-inner"> 
+                    <div class="item-input">
+                      <label class="label-switch" >
+                        <input type="checkbox" name="active" id="active" value="1" class="" />
+                        <div class="checkbox"></div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+          </ul>
+        </div>
+            
+              
+          <div class="content-block-title">О себе</div>
+          <div class="list-block">
+            <ul>
+              <li>
+                <div class="item-content">
+                  <div class="item-media"><i class="icon icon-form-tel"></i></div>
+                  <div class="item-inner"> 
+                    <div class="item-title label">Телефон</div>
+                    <div class="item-input">
+                      <input readonly type="tel" name="phone" placeholder="с кодом страны"/>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-media"><i class="icon icon-form-password"></i></div>
+                  <div class="item-inner"> 
+                    <div class="item-title label">Пароль</div>
+                    <div class="item-input">
+                      <input type="password" id="password" placeholder="Оставить старый"/>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-media"><i class="icon icon-form-gender"></i></div>
+                  <div class="item-inner"> 
+                    <div class="item-title label">Пол</div>
+                    <div class="item-input">
+                      <select id="gender" name="gender">
+                        <option value="0">Байкер</option>
+                        <option value="1">Байкерша</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </li>
+    
+              <li>
+                <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-city"></i></div>
+                        <div id="autocomplete-city" class="item-input item-inner autocomplete-opener">
+                            <div class="item-title label">Город</div>
+                            <input readonly type="text" name="city" class="item-after item-input">
+                            <input type="hidden" name="id_city" id="id_city">
+                        </div>
+                </div>
+              
+              </li>          
+    
+              <li>
+                <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-cycle"></i></div>
+                        <div id="autocomplete-motorcycle" class="item-input item-inner 1item-content autocomplete-opener">
+                            <div class="item-title label">Марка-модель</div>
+                            <input readonly type="text" name="motorcycle" class="item-after item-input">
+                            <input type="hidden" name="id_motorcycle" id="id_motorcycle">
+                        </div>
+                </div>
+              
+              </li>          
+    
+              <li>
+                <div class="item-content">
+                  <div class="item-media"><i class="icon icon-form-cyclemore"></i></div>
+                  <div class="item-inner"> 
+                    <div class="item-title label">Объем итд</div>
+                    <div class="item-input">
+                      <input type="text" name="motorcycle_more" placeholder=""/>
+                    </div>
+                  </div>
+                </div>
+              </li>          
+            </ul>
+          </div>
+    <!------------------>
+          <div id="may_to_help">
+          <div class="content-block-title">Могу помочь</div>                   
+          <div class="list-block" id="helplist_toggle">
+            <ul>          
+              <li>
+                <div class="item-content">
+                  <div class="item-media"><i class="icon icon-form-repair"></i></div>
+                  <div class="item-inner"> 
+                    <div class="item-title label">Ремонт</div>
+                    <div class="item-input">
+                      <label class="label-switch">
+                        <input type="checkbox" id="repair" name="help_repair" value="1"/>
+                        <div class="checkbox"></div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-media"><i class="icon icon-form-garage"></i></div>
+                  <div class="item-inner"> 
+                    <div class="item-title label">Гараж</div>
+                    <div class="item-input">
+                      <label class="label-switch">
+                        <input type="checkbox" id="garage" name="help_garage" value="1"/>
+                        <div class="checkbox"></div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-media"><i class="icon icon-form-bed"></i></div>
+                  <div class="item-inner"> 
+                    <div class="item-title label">Ночлег</div>
+                    <div class="item-input">
+                      <label class="label-switch">
+                        <input type="checkbox" id="bed" name="help_bed" value="1"/>
+                        <div class="checkbox"></div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-media"><i class="icon icon-form-food"></i></div>
+                  <div class="item-inner"> 
+                    <div class="item-title label">Поесть</div>
+                    <div class="item-input">
+                      <label class="label-switch">
+                        <input type="checkbox" id="food" name="help_food"  value="1"/>
+                        <div class="checkbox"></div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+    
+               <li>
+                <div class="item-content">
+                  <div class="item-media"><i class="icon icon-form-beer"></i></div>
+                  <div class="item-inner"> 
+                    <div class="item-title label">По пиву</div>
+                    <div class="item-input">
+                      <label class="label-switch">
+                        <input type="checkbox"id="beer" name="help_beer" value="1"/>
+                        <div class="checkbox"></div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-media"><i class="icon icon-form-strong"></i></div>
+                  <div class="item-inner"> 
+                    <div class="item-title label">Покрепче</div>
+                    <div class="item-input">
+                      <label class="label-switch">
+                        <input type="checkbox" id="strong" name="help_strong" value="1"/>
+                        <div class="checkbox"></div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-media"><i class="icon icon-form-party"></i></div>
+                  <div class="item-inner"> 
+                    <div class="item-title label">Компания</div>
+                    <div class="item-input">
+                      <label class="label-switch">
+                        <input type="checkbox"  id="party" name="help_party" value="1"/>
+                        <div class="checkbox"></div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-media"><i class="icon icon-form-excursion"></i></div>
+                  <div class="item-inner"> 
+                    <div class="item-title label">Экскурсия</div>
+                    <div class="item-input">
+                      <label class="label-switch">
+                        <input type="checkbox" id="excursion" name="help_excursion" value="1"/> 
+                        <div class="checkbox"></div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          </div>
+    <!------------------>
+          <div class="content-block-title">Что-то еще?</div>
+          <div class="list-block" id="helplist_toggle">
+            <ul>                    
+              <li class="align-top">
+                <div class="item-content">
+                  <div class="item-media"><i class="icon icon-form-comment"></i></div>
+                  <div class="item-inner"> 
+                    <div class="item-input">
+                      <textarea name="description"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+    
+          <div class="content-block">
+                <a href="#" class="button form-to-json profile-change button-big">Сохранить</a>
+          </div>
+          <input hidden type="text" name="id_user"/>
+          <input hidden type="text" name="passwd"/>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru" manifest0000="manifest.appcache.php">
+<head>
+    <meta charset="utf-8"/>
+<!--     <link rel="manifest" href="manifest.json"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui, user-scalable=no"/>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"> 
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="img/logo_196.png"> <!-- на экране -->
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" sizes="196x196" href="img/logo_196.png">
+    <link rel="icon" sizes="1024x1024" href="img/logo_1024.png"> 
+
+    <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" /> 
+    <title>F7 Moto Helplist</title>
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/croppie.css" /> 
+   
+
+</head>
+
+<body>
+
+    
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <!--div class="left sliding"><a href="#" class="back link"><i class="icon icon-back"></i><span>Назад</span></a></div-->
+                <div class="center sliding"></div>
+                <div class="right"><!--a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a--></div>
+            </div>
+        </div>
+
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">            
+          <!-- Page, data-page contains page name-->
+          <div data-page="index" class="page">
+            <!-- Scrollable page content-->
+                
+            <!-- начало --> 
+
+            <div class="pages">
+                <div data-page="index" class="page no-navbar no-toolbar page-on-center">
+                    <div class="page-content">
+<p>&nbsp;</p><p>&nbsp;</p>
+<div class="content-block no-margin">
+    <p>Moto Helplist обновился. Мы стали быстрее и снизили требования к качеству интернет-соединения. </p></div>
+
+<div class="content-block no-margin">
+    <p>Чтобы перейти на новую версию:
+        <li>Удали иконку с экрана</li>
+        <li>Установи новую верию</li>
+        <li>Сохрани иконку на экран</li>
+        <br>
+        <a href="https://app.motohelplist.com/" class="button button-big button-fill">Установить новую версию</a>
+</div>
+<p>&nbsp;</p>
+<div class="content-block no-margin"><p>Хорошие новости: теперь без интернета можно использовать все разделы кроме Карты — например посмотреть историю переписки в чат-каналах. Хелп-лист также работает без интернета.</p>
+<p>Плохие новости: поддержка Windows Phone прекращена полностью. </p></div>
+            
+                    </div>
+                </div>
+            </div>
+    
+            <!-- конец --> 
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <div class="hide" id="google-map-script-container"></div>        
+
+    <script src="js/framework7.js"></script>
+    <script src="js/moment.min.js"></script>                    
+    <script src="js/sha1.js"></script>        
+
+
+
+  </body>
+</html>

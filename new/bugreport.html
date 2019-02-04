@@ -1,0 +1,49 @@
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left"><a href="#" class="back link icon-only"> <i class="icon icon-back"></i></a></div>
+        <div class="center sliding" data-lang="bugreport"></div>
+        <div class="right">
+            <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="pages">
+    <div data-page="bugreport" class="page">
+        <div class="page-content hide-bars-on-scroll">
+
+            <div class="content-block-title" data-lang="ifSomethingIsWrong"></div>
+            <div class="content-block">
+                <p data-lang="bugreport1"></p>
+                <p data-lang="bugreport2"></p>
+            </div>    
+    
+            <form id="bugreport">
+                <div class="list-block">
+                    <ul>
+                        <li class="align-top">
+                          <div class="item-content">
+                            <div class="item-media"><i class="icon icon-bug"></i></div>
+                            <div class="item-inner">
+                              <div class="item-input">
+                                <textarea required name="bug_description"></textarea>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                    </ul>
+                </div>
+            
+                <textarea class="hide" name="debug"></textarea>
+                <textarea class="hide" name="dbinfo"></textarea>
+            
+                <div class="content-block">
+                    <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
+                    <span data-lang="screenshot"></span>: <input type="file" name="screenshot">
+                <p>&nbsp;</p>        
+                    <input type="submit" class="button button-big">
+                </div>                
+            </form>
+        </div>
+    </div>
+</div>

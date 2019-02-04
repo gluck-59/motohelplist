@@ -1,0 +1,205 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left"><a href="#" class="back link icon-only"> <i class="icon icon-back"></i></a></div>
+    <div class="center sliding" data-lang="helplist"></div>
+    <div class="right">
+        <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="help_list" class="page">
+    <div class="page-content hide-bars-on-scroll">
+
+    <div class="no_websql hide">
+        <div class="content-block-title" data-lang="noWebsql"><!-- Хьюстон, у нас проблемы --></div>        
+        <div hidden id="" class="content-block">
+            <p data-lang="noWebsql10"></p>
+        </div>
+        
+        <div class="content-block-title" data-lang="noWebsql20"><!-- Что можно сделать: --></div>
+        <div class="content-block">
+        <p data-lang="noWebsql30"></p>
+        <p data-lang="noWebsql40"></p>
+        <p data-lang="noWebsql50"></p>
+        <ul data-lang="noWebsql60"></ul>
+
+        <p>&nbsp;</p>            
+    
+        <p data-lang="noWebsql70"></p>
+        <p data-lang="noWebsql80"></p>
+        <p>&nbsp;</p>
+        <input type="button" value="Get Google Chrome" class="button button-big button-round" onclick="getChrome()">
+    </div>    
+</div>            
+    
+        <div class="filter content-block-title" data-lang="whatHappens"><!-- Что случилось? --></div>    
+
+        <div data-lang="localEmergencyCall"><!-- тут звонилка в каждой стране своя --></div>
+
+        <div id="" class="filter">
+
+            <form id="filter_form" >
+                <div class="row content-block-helplist-switches">
+                <div class="list-block">
+                  <ul>
+                    <li class="">
+                      <label class="label-checkbox item-content">
+                        <input type="checkbox" id="help_repair">
+                        <div class="item-media">
+                          <i class="icon icon-form-checkbox"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title" data-lang="help_repair"><!-- Ремонт --></div>
+                        </div>
+                      </label>
+                    </li>
+    
+                    <li class="">
+                      <label class="label-checkbox item-content">
+                        <input type="checkbox" id="help_garage">
+                        <div class="item-media">
+                          <i class="icon icon-form-checkbox"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title" data-lang="help_garage"><!-- Гараж --></div>
+                        </div>
+                      </label>
+                    </li>
+    
+                    <li class="">
+                      <label class="label-checkbox item-content">
+                        <input type="checkbox" id="help_food">
+                        <div class="item-media">
+                          <i class="icon icon-form-checkbox"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title" data-lang="help_food"><!-- Поесть --></div>
+                        </div>
+                      </label>
+                    </li>
+    
+                    <li class="">
+                      <label class="label-checkbox item-content">
+                        <input type="checkbox" id="help_bed">
+                        <div class="item-media">
+                          <i class="icon icon-form-checkbox"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title" data-lang="help_bed"><!-- Ночлег --></div>
+                        </div>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="list-block">
+                <ul>                          
+                    <li class="">
+                      <label class="label-checkbox item-content">
+                        <input type="checkbox" id="help_beer">
+                        <div class="item-media">
+                          <i class="icon icon-form-checkbox"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title" data-lang="help_beer"><!-- По пиву --></div>
+                        </div>
+                      </label>
+                    </li>
+    
+                    <li class="">
+                      <label class="label-checkbox item-content">
+                        <input type="checkbox" id="help_strong">
+                        <div class="item-media">
+                          <i class="icon icon-form-checkbox"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title" data-lang="help_strong"><!-- Покрепче --></div>
+                        </div>
+                      </label>
+                    </li>                
+    
+                    <li class="">
+                      <label class="label-checkbox item-content">
+                        <input type="checkbox" id="help_party">
+                        <div class="item-media">
+                          <i class="icon icon-form-checkbox"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title" data-lang="help_party"><!-- Компания --></div>
+                        </div>
+                      </label>
+                    </li>                                
+    
+    
+                    <li class="">
+                      <label class="label-checkbox item-content">
+                        <input type="checkbox" id="help_excursion">
+                        <div class="item-media">
+                          <i class="icon icon-form-checkbox"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title" data-lang="help_excursion"><!-- Экскурсия --></div>
+                        </div>
+                      </label>
+                    </li>                                
+    
+                  </ul>
+                </div> 
+                </div>
+
+                <div class="filter content-block">
+                    <a href="#" onclick="submitfilter(this); return false;" class="button button-big button-round button-fill color-green" data-lang="find"></a>
+                </div>
+            </form>
+
+        <div id="helplistResults"></div>
+    </div>
+</div>
+
+
+<script type="text/template7" id="hlusers">
+    <div>
+        <p class="text-right" id="scrollto">
+            <span id="abc" class="hide gray_text" onclick="sortingDist()"><span data-lang="citiesByAbc"><!-- города по алфавиту --></span> &nbsp;&#9650;&nbsp;</span>
+            <span id="dist" class="gray_text 1content-block-title" onclick="sortingABC()"><span data-lang="citiesByDist"><!-- города по расстоянию --></span> &nbsp;&#9650;&nbsp;</span>
+        </p>
+    </div>
+
+    <div class="list-block media-list">
+        <ul id="userslist" >
+            {{#each users}}
+            <li  class="hluser">
+                <a href="tel:+{{phone}}" class="item-link item-content external">
+                    <div class="item-inner">
+
+                        <div class="item-title">{{name}} </div>
+                        <div class="item-subtitle"  id="{{hlcity}}">{{hlcity}}{{#if distance}}, {{distance}} km{{/if}}</div>
+                        <div class="item-text">
+                            {{#if help_repair}}<span class="red tip" data-lang="help_repair"></span>{{/if}}
+                            {{#if help_garage}}<span class="orange tip" data-lang="help_garage"></span>{{/if}}
+                            {{#if help_food}}<span class="orange tip" data-lang="help_food"></span>{{/if}}
+                            {{#if help_bed}}<span class="red tip" data-lang="help_bed"></span>{{/if}}
+                            {{#if help_beer}}<span class="green tip" data-lang="help_beer"></span>{{/if}}
+                            {{#if help_strong}}<span class="green tip" data-lang="help_strong"></span>{{/if}}
+                            {{#if help_party}}<span class="blue tip" data-lang="help_party"></span>{{/if}}
+                            {{#if help_excursion}}<span class="blue tip" data-lang="help_excursion"></span>{{/if}}</div>          
+                        {{#if description}}
+                            <div class="item-text">{{description}}</div>
+                        {{/if}}
+                    </div>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</script>    
+  
+<script>
+    if (navigator.onLine) offline();
+</script>
+
+
+    </div>
+  </div>
+</div>
+

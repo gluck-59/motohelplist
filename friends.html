@@ -1,0 +1,88 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left"><a href="#" class="back link icon-only"> <i class="icon icon-back"></i></a></div>
+    <div class="center sliding" data-lang="friends"><!-- Друзья --></div>
+    <div class="right"><a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a></div>
+  </div>
+</div>
+
+<div class="pages navbar-through">
+    <div data-page="friends" class="page tabbar-labels-fixed">
+        <div class="toolbar tabbar tabbar-labels">
+            <div class="toolbar-inner">
+
+            <a href="#list_friends" class="tab-link active">
+                <i class="icon icon-tabbar-channels"></i>
+                <span class="tabbar-label" data-lang="friendsList"><!-- Список друзей --></span>
+            </a>
+
+            <a href="#find_friends" class="tab-link">
+                <i class="icon icon-tabbar-search">
+                </i>
+                <span class="tabbar-label" data-lang="findFriends"><!-- Найти друзей --></span>
+            </a>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="page-content hide-bars-on-scroll">
+        <div class="tabs">
+
+
+            <div id="list_friends" class="tab active"> 
+                <div class="" data-distance="50">
+                    <div class="list-block media-list no-margin"  id="friendResults"></div>
+                        <div class="content-block" id="nofriends">
+                            <p data-lang="youHaveNoFriends1"><!-- У тебя пока нет друзей. Найди их: --></p>
+                            <li data-lang="youHaveNoFriends10"></li><li data-lang="youHaveNoFriends20"></li><li data-lang="youHaveNoFriends30"></li><li data-lang="youHaveNoFriends40"></li><li data-lang="youHaveNoFriends50"></li>
+                        </div>
+                    <div id="error"></div>
+                </div>
+            </div>
+
+
+
+
+            <div id="find_friends" class="tab"> 
+                <div class="content-block" data-lang="findFriendsFromReal"></div>                
+                
+                <div class="list-block">
+                  <ul>
+                    <li class="item-content">
+                      <div class="item-title label" data-lang="Search"><!-- Поиск --></div>
+                      <div class="item-input">
+                        <input type="text" placeholder="nickOrPhone" id="autocomplete-dropdown-expand-friends"></div>
+                    </li>
+                  </ul>
+                </div>
+                
+                
+                <div class="content-block" data-lang="findFriendsFromReal1"></div>
+                <div  id="searchToFriends">
+                    <div class="content-block">
+                          <a href="#" data-link="city" class="button" ><span data-lang="countrymansIn"><!-- Земляки в --></span>&nbsp;<span class="mycity"></span></a>
+                    </div>
+                    <div class="content-block">
+                          <a href="#" data-link="motorcycle" class="button"><span data-lang="owners1"><!-- Владельцы --></span>&nbsp;<span class="mycycle"></span>&nbsp;<span data-lang="owners2"></span></a>
+                    </div>
+                    <div class="content-block">
+                          <a href="#" data-link="city-motorcycle" class="button"><span data-lang="owners1"><!-- Владельцы --></span>&nbsp;<span class="mycycle"></span>&nbsp;<span data-lang="in"></span>&nbsp;<span class="mycity"></span></a>
+                    </div>
+                </div>
+                
+                <div class="list-block media-list no-margin"  id="searchToFriendsResults"></div>
+                <div class="content-block hide" id="noSearchToFriendsResults">
+                    <p data-lang="youAloneHere"><!-- Увы, пока ты здесь один. --></p>
+                    <p data-lang="tellAboutUs"><!-- Расскажи знакомым о Moto Helplist и пригласи их сюда. --></p>    
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left"><a href="#" class="back link icon-only"> <i class="icon icon-back"></i></a></div>
+        <div class="center sliding" data-lang="channelInfo"></div>
+        <div class="right"><a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a></div>
+        <!--div class="subnavbar"></div-->
+    </div>
+</div>
+<div class="pages">
+    <div data-page="channel_info" class="page">
+        <div class="page-content hide-bars-on-scroll">
+
+            <div class="card facebook-card">
+              <div class="card-header">
+                <div class="facebook-avatar"><img src="img/i-form-private-ios.svg" width="34" height="34"></div>
+                <div class="facebook-name channelname"></div>
+                <div class="facebook-date channelcount"></div>
+              </div>
+            </div> 
+            
+            <p>&nbsp;</p>
+
+            <form id="add_members_form" action="" method="" onsubmit="add_members_formsubmit(); return false;">
+                <div class="list-block no-margin formoder hide">
+                    <ul><li><a href="#" class="item-link smart-select" data-open-in="page" onclick="">
+                        <select name="addmembers" multiple id="addmembers" onchange="check_select()">
+                            <option data-label="youHaveNoFriends"></option>
+                        </select>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title" data-lang="addMembersToChannel"></div>
+                                <div class="item-after" id="memberslist"></div>
+                            </div>
+                        </div></a></li>
+                    </ul>
+                </div>  
+            
+            <div class="content-block no-margin hide" id="add_button">
+                <br><input type="submit" id="" class="button button-big button-round">
+            </div>
+            </form>
+            
+            <div class="content-block-title formoder adding hide">
+                <div class="list-block-label no-margin" data-lang="swipeLeftToDelete"></div>
+            </div>
+
+            <div class="list-block media-list adding no-margin"  id="membersResults"></div>
+            
+        </div>
+    </div>
+</div>

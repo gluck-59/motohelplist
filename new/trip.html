@@ -1,0 +1,48 @@
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left"><a href="#" class="back link icon-only"> <i class="icon icon-back"></i></a></div>
+        <div class="center sliding" data-lang="trip"></div>
+        <div class="right"><a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a></div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="trip" class="page no-toolbar">
+        <div class="page-content">
+
+            <div class="content-block-title" data-lang="imOnMap"><!-- Я на карте мира --></div>
+            <div class="list-block">
+                <div class="list-block-label" data-lang="imOnMap10"></div>
+                
+                  <ul>            
+                    <li>
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-toggle"></i></div>
+                        <div class="item-inner">
+                          <div class="item-title label" data-lang="tripStart"><!-- Поехали --></div>
+                          <div class="item-input">
+                            <label class="label-switch">
+                              <input type="checkbox" id="trip" onchange="checktrip()">
+                              <div class="checkbox"></div>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  
+                <br><div class="list-block-label orange_text" id="triphint" data-lang="tripHint"></div>
+            </div>
+               
+            <a href="map.html">
+                <div id="tripmap">
+                    <span style="width:42px; height:42px" class="preloader hide"></span>
+                </div>
+            </a>
+
+            <div class="content-block hide" id="triplink">
+                <a href="map.html" class="button" data-lang="toFullScreen"><!-- Во весь экран --></a>
+            </div>            
+
+        </div>
+    </div>
+</div>

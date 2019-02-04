@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+
+    <head>
+        <meta charset="utf-8">
+        <link rel="Stylesheet" type="text/css" href="sass/demo.css" />
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        
+        
+    </head>
+    <body>
+        
+        
+        <input type="file" id="upload">
+<div id="upload-demo"></div>        
+        
+    </body>
+           <script src="js/croppie.js"></script>
+ 
+    <script>
+        
+var $uploadCrop;
+
+		function readFile(input) {
+ 			if (input.files && input.files[0]) {
+	            var reader = new FileReader();
+	            
+	            reader.onload = function (e) {
+	            	$uploadCrop.croppie('bind', {
+	            		url: e.target.result
+	            	});
+	            	$('.upload-demo').addClass('ready');
+	                // $('#blah').attr('src', e.target.result);
+	            }
+	            
+	            reader.readAsDataURL(input.files[0]);
+	        }
+	        else {
+		        alert("Sorry - you're browser doesn't support the FileReader API");
+		    }
+		}
+
+		$uploadCrop = $('#upload-demo').croppie({
+			viewport: {
+				width: 200,
+				height: 200,
+				type: 'circle'
+			},
+			boundary: {
+				width: 300,
+				height: 300
+			}
+		});
+
+		$('#upload').on('change', function () { readFile(this); });
+		$('.upload-result').on('click', function (ev) {
+			$uploadCrop.croppie('result', 'canvas').then(function (resp) {
+				popupResult({
+					src: resp
+				});
+			});
+		});
+
+</script>        
+
+</html>
+
+
+
+
+

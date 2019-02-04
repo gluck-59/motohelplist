@@ -1,0 +1,103 @@
+
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="center sliding">Регистрация</div>
+    </div>
+</div>
+
+<div class="pages navbar-through">
+    <!-- Page, data-page contains page name-->
+    <div data-page="registration" class="page no-toolbar no-swipeback">
+        <div class="page-content">
+        <div class="content-block">
+            <p>Судя по всему, мы незнакомы. Сейчас самое время исправить это.</p>
+    
+            <form id="registration" class="list-block store-data">
+                <ul>
+    <li>
+      <div class="item-content">
+        <div class="item-media"><i class="icon icon-form-name"></i></div>
+        <div class="item-inner">
+          <div class="item-title label">Ник</div>
+          <div class="item-input">
+            <input type="text" name="name" placeholder="для чата" value="">
+          </div>
+        </div>
+      </div>
+    </li>                        
+    
+  <li>
+    <div class="item-content">
+        <div class="item-media"><i class="icon icon-form-city"></i></div>
+            <div id="autocomplete-city" class="item-input item-inner autocomplete-opener">
+                <div class="item-title label">Город</div>
+                <input readonly type="text" name="city" class="item-after item-input">
+                <input type="hidden" name="id_city" id="id_city">
+            </div>
+    </div>
+  
+  </li>          
+
+    <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon icon-form-gender"></i></div>
+          <div class="item-inner"> 
+            <div class="item-title label">Пол</div>
+            <div class="item-input">
+              <select id="gender" name="gender">
+                <option selected value="">-выберите-</option>
+                <option value="0">Байкер</option>
+                <option value="1">Байкерша</option>
+              </select>
+            </div>
+          </div>
+        </div>
+    </li>              
+                        </ul>
+                        <div>&nbsp;</div>
+                        <ul>
+    <li>
+      <div class="item-content">
+        <div class="item-media"><i class="icon icon-form-active"></i></div>
+        <div class="item-inner">
+          <div class="item-title label">SMS-код</div>
+          <div class="item-input">
+            <input type="tel" placeholder="4 цифры" name="code" value="">
+          </div>
+        </div>
+      </div>
+    </li>      
+
+                            
+
+    <li>
+      <div class="item-content">
+        <div class="item-media"><i class="icon icon-form-toggle"></i></div>
+        <div class="item-inner">
+          <div class="item-title label">Согласен с Манифестом</div>
+          <div class="item-input">
+            <label class="label-switch">
+              <input type="checkbox" name="agree" value="1">
+              <div class="checkbox"></div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </li>
+
+                        </ul>
+                        
+    <div class="content-block">
+        <a href="#" class="button button-big button-round item-link list-button form-to-json registration" id="registration">Регистрируюсь</a>
+    </div>
+
+    <div class="list-block">
+          <div class="list-block-label"><a  href="#" class="manifest item-link list-button">Пользовательское соглашение</a></div>
+    </div>          
+                                  
+                    </form>
+        </div>
+    </div>
+
+</div>
+

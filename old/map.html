@@ -1,0 +1,250 @@
+<!DOCTYPE xhtml PUBLIC "-//W3C//DTD XHTML 4.01//EN">
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Where Am I?</title>
+<script src="http://maps.google.com/maps/api/js"></script>
+<script type="text/javascript" src="js/geometa.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer_compiled.js"></script>
+			
+
+
+
+
+<script type="text/javascript">
+var markerCluster;
+    
+//  var map;
+  function initialise() {
+    var latlng = new google.maps.LatLng(53.1424223,29.2242762);
+    var myOptions = {
+      zoom: 6,
+      center: latlng,
+    mapTypeControlOptions: {
+        style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+        position: google.maps.ControlPosition.TOP_RIGHT,
+    },
+    scaleControl: true,
+    scrollwheel: true,
+    panControl: true,
+    streetViewControl: true,
+    draggable : true,
+    overviewMapControl: true,
+    overviewMapControlOptions: {
+        opened: false,
+    },
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+
+    prepareGeolocation();
+    doGeolocation();
+ 
+    map = new google.maps.Map(document.getElementById("map"), myOptions);
+    
+
+google.maps.event.addListenerOnce(map, 'tilesloaded', function()
+{
+    placeMarkers(map);
+}); 
+
+
+  markerCluster = new MarkerClusterer(map); 
+
+
+  }
+ 
+function placeMarkers(map) {
+markerCluster.clearMarkers();
+request = {};
+request.task = "getHotels";
+request.bounds = true;
+
+var bounds = map.getBounds();
+
+if (request.bounds)
+{
+request.bounds_ne_lat = bounds.getNorthEast().lat();
+request.bounds_ne_lng = bounds.getNorthEast().lng();
+request.bounds_sw_lat = bounds.getSouthWest().lat();
+request.bounds_sw_lng = bounds.getSouthWest().lng();
+}
+
+//console.log(request);
+
+    $.post(
+    "http://motohelplist.com/hotels.php",
+    request,
+    function(xml){ 
+        $(xml).find("marker").each(function()
+        { 
+            var name = $(this).find('name').text(); 
+            var price = $(this).find('price').text(); 
+            var phone1 = $(this).find('phone1').text(); 
+            var phone2 = $(this).find('phone2').text();       
+            var parking = $(this).find('parking').text(); 
+            var ac = $(this).find('ac').text();       
+            var wifi = $(this).find('wifi').text();       
+            var sauna = $(this).find('sauna').text();
+            var description = $(this).find('description').text();      
+            var map_icon = $(this).find('map_icon').text();        
+
+//console.log(name);
+            
+            // создадим объект LatLng для каждого из маркеров 
+            var lat = $(this).find('lat').text(); 
+            var lng = $(this).find('lng').text(); 
+            var point = new google.maps.LatLng(parseFloat(lat),parseFloat(lng));      
+            // расширим границы для включения нового маркера 
+            //map.bounds.extend(point); 
+            // добавим маркер на карту 
+            var marker = new google.maps.Marker({ 
+            position: point, 
+            map: map,
+            icon: 'http://motohelplist.com/img/icons/'+map_icon+'.png',
+            clickable: true
+            }); 
+            markerCluster.addMarker(marker);
+            //markers.push(marker);
+            
+            
+            // создадим текстовую подсказку 
+            var infoWindow = new google.maps.InfoWindow(); 
+            var html='<b>'+name+'</b>'
+            +(price ? ', '+price+' руб в сутки<br>' : '<br>')
+            +(phone1 ? 'Тел.: <a href="tel:+'+phone1+'">+'+phone1+'</a> ' : '')
+            +(phone2 ? '&nbsp;&nbsp;<a href="tel:+'+phone2+'">+'+phone2+'</a><br>' : '<br>')
+            +(parking == 1 ? '&bull; паркинг во дворе ' : '')      
+            +(ac == 1 ? '&bull; кондиционер ' : '')
+            +(wifi == 1 ? '&bull; Wi-Fi ' : '')
+            +(sauna == 1 ? '&bull; баня/сауна ' : '')
+            +(description ? '<br>'+description : '')      
+            ; 
+            
+            // добавим слушатель события для маркеров 
+                google.maps.event.addListener(marker, 'click', function() { 
+                infoWindow.setContent(html); 
+                infoWindow.open(map, marker); 
+            }); 
+        }); 
+    });
+}
+
+
+
+
+  function doGeolocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(positionSuccess, positionError);
+    } else {
+      positionError(-1);
+    }
+  }
+  
+  
+  
+  
+
+  function positionError(err) {
+    var msg;
+    switch(err.code) {
+      case err.UNKNOWN_ERROR:
+        msg = "Unable to find your location";
+        break;
+      case err.PERMISSION_DENINED:
+        msg = "Permission denied in finding your location";
+        break;
+      case err.POSITION_UNAVAILABLE:
+        msg = "Your location is currently unknown";
+        break;
+      case err.BREAK:
+        msg = "Attempt to find location took too long";
+        break;
+      default:
+        msg = "Location detection not supported in browser";
+    }
+    document.getElementById('info').innerHTML = msg;
+  }
+  
+  
+  
+  
+  
+  
+
+  function positionSuccess(position) {
+    // Centre the map on the new location
+    var coords = position.coords || position.coordinate || position;
+    var latLng = new google.maps.LatLng(coords.latitude, coords.longitude);
+    map.setCenter(latLng);
+//console.log(latLng);
+//alert();
+    map.setZoom(12);
+    var marker = new google.maps.Marker({
+	    map: map,
+	    position: latLng,
+	    title: 'Why, there you are!'
+    });
+
+
+
+
+//    document.getElementById('info').innerHTML = 'Looking for <b>' + coords.latitude + ', ' + coords.longitude + '</b>...';
+
+    // And reverse geocode.
+    (new google.maps.Geocoder()).geocode({latLng: latLng}, function(resp) {
+		  var place = "You're around here somewhere!";
+		  if (resp[0]) {
+			  var bits = [];
+			  for (var i = 0, I = resp[0].address_components.length; i < I; ++i) {
+				  var component = resp[0].address_components[i];
+				  if (contains(component.types, 'political')) {
+					  bits.push('<b>' + component.long_name + '</b>');
+					}
+				}
+				if (bits.length) {
+					place = bits.join(' > ');
+				}
+				marker.setTitle(resp[0].formatted_address);
+			}
+//			document.getElementById('info').innerHTML = place;
+	  });
+
+
+//var bounds = map.getBounds();
+//console.log(bounds);
+
+  }
+
+  function contains(array, item) {
+	  for (var i = 0, I = array.length; i < I; ++i) {
+		  if (array[i] == item) return true;
+		}
+		return false;
+	}
+
+
+
+
+
+
+
+/*document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+initialise();    
+    console.log("console.log works well");
+} */
+
+
+</script>
+</head>
+<body onload="initialise()">
+  <div id="map" style="width:100%; height:90%; border: solid;"></div>
+  <div id="info" class="lightbox" style="width:100%; position:absolute; overflow:hidden; text-align:center; bottom: 30px"; filter:alpha(opacity=60); -moz-opacity:0.6; -khtml-opacity: 0.6; opacity: 0.6; background-color:white; padding:2px;></div>
+</body>
+
+
+
+
+</html>

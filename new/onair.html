@@ -1,0 +1,177 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left"><a href="#" class="back link icon-only"> <i class="icon icon-back"></i></a></div>
+    <div class="center sliding" id="navbar-name" data-lang="chatChannels"><!-- Чат-каналы --></div>
+    <div class="right"><a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a></div>
+  </div>
+</div>
+
+
+<div class="pages ">
+    <div data-page="onair" class="page tabbar-labels-fixed">
+    
+        <!-----bottom-toolbar----->
+        <div class="toolbar tabbar tabbar-labels">
+            <div class="toolbar-inner">
+
+                <a href="#air" class="tab-link active">
+                    <i class="icon icon-tabbar-channels">
+                        <span id="channelUnreadMsg" class="badge bg-red" style="display: none;"></span>
+                    </i>
+                    <span class="tabbar-label" data-lang="chatChannels"><!-- Чат-каналы --></span>
+                </a>
+    
+                <a href="#personal" class="tab-link">
+                    <i class="icon icon-tabbar-channels">
+                        <span id="privateUnreadMsg" class="badge bg-red" style="display: none;"></span>
+                    </i>
+                    <span class="tabbar-label" data-lang="personalMail"><!-- Личка --></span>
+                </a>
+    
+                <a href="#add_channel" class="tab-link">
+                    <i class="icon icon-tabbar-channels-add"></i>
+                    <span class="tabbar-label" data-lang="create"><!-- Создать --></span>
+                </a>
+    
+                <a href="#find_channel" class="tab-link">
+                    <i class="icon icon-tabbar-search">
+                    </i>
+                    <span class="tabbar-label" data-lang="find"><!-- Найти --></span>
+                </a>
+            
+            </div>
+        </div>
+
+        <!-----page-content----->
+
+        <div class="page-content onair-content hide-bars-on-scroll infinite-scroll /*tabs-animated-wrap*/">
+            <div class="tabs">
+                <!-----tab-air--->
+                <div id="air" class="tab active"> 
+                    <div class="" data-distance="50">
+                        <div class="list-block media-list no-margin" id="onairResults">
+                            <!--div class="list-block media-list sortable" style="margin: 0"-->                            
+                        </div>
+    
+                        <div class="content-block" id="noOnairResults"><p data-lang="chatSoon"></p></div>                                    
+    
+                        <div class="infinite-scroll-preloader">
+                            <div class="preloader"></div>
+                        </div>        
+                    </div>
+                </div>
+                <!-----tab-personal--->
+                <div id="personal" class="tab">
+                    <div class="" data-distance="50">
+                        <div class="list-block media-list no-margin" id="personalResults"></div>
+
+                        <div class="content-block" id="noPersonalResults">
+                            <p data-lang="pmSoon"></p>
+                        </div>            
+                       
+                        <div class="infinite-scroll-preloader">
+                            <div class="preloader"></div>
+                        </div>        
+                    </div>
+                </div>
+                <!-----tab-add_channel--->
+                <div id="add_channel" class="tab"> 
+                    <form id="add_channel_form">
+                        <br>
+                        <div class="content-block no-margin" data-lang="createCommonChat"></div>
+                        <div class="list-block inset">
+                            <ul>
+                                <li>
+                                    <div class="item-content">
+                                        <!--div class="item-media"><i class="icon icon-tabbar-channels"></i></div-->
+                                        <div class="item-inner">
+                                            <div class="item-input">
+                                                <input type="text" name="name_channel" placeholder="channelName" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>    
+        
+                                <li id="type_channel_row">
+                                    <a href="#" class="item-link smart-select" data-back-on-select="true">
+                                        <select name="urgency">
+                                            <option value="0" selected data-lang="talk"><!-- Поболтать --></option>
+                                            <option value="1" data-option-color="orange" data-lang="fault"><!-- Сломался --></option>
+                                            <option value="2" data-option-color="red" data-lang="crash"><!-- ДТП --></option>
+                                        </select>
+                                        <div class="item-content"  id="urgency">
+                                            <div class="item-inner">
+                                            <div class="item-title" data-lang="urgency"><!-- Важность --></div>
+                                                <div class="item-after" data-lang="talk"><!-- Поболтать --></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+        
+                                <li>
+                                  <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-form-url"></i></div>
+                                    <div class="item-inner">
+                                      <div class="item-title label">GPS</div>
+                                      <div class="item-input">
+                                        <label class="label-switch">
+                                          <input type="checkbox" name="allowgps" id="allowgps" value="1">
+                                          <div class="checkbox"></div>
+                                        </label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>    
+                            </ul>
+                        </div>  
+                        <br>
+                        <div class="content-block no-margin" data-lang="createPersonalChat"></div>
+                        <br>
+    
+                        <div class="list-block no-margin">
+                            <ul><li><a href="#" class="item-link smart-select" data-open-in="page">
+                                <select name="invitefriends" multiple id="invitefriends"  onchange="checktype()">
+                                    <option></option>
+                                </select>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title" data-lang="friends"><!-- Друзья --></div>
+                                        <div class="item-after" id="friendslist"></div>
+                                    </div>
+                                </div></a></li>
+                            </ul>
+                        </div>  
+    
+                        <br>
+                        <div class="list-block inset no-margin">
+                            <a href="#" onclick="add_channel_formsubmit(); return false;" id="create_channel" class="button button-big button-round" data-lang="createCommonChannel"></a>
+                        </div>
+                        <br>
+                        <input type="hidden" name="type_channel" value="4" placeholder="type_channel">  
+                        <input type="hidden" name="invitefriends" value="" placeholder="invitefriends">
+                        <input type="hidden" name="lat" value="" placeholder="lat">
+                        <input type="hidden" name="lng" value="" placeholder="lng">
+                    </form>                      
+                </div>
+                <!-----tab-find_channel--->
+                <div id="find_channel" class="tab"> 
+                    <div class="content-block">
+                        <div class="content-block-title" data-lang="findChannel"><!-- Найти чат-канал --></div>
+                        <div class="list-block">
+                          <ul>
+                            <li class="item-content">
+                              <div class="item-title label" data-lang="Search"><!-- Поиск --></div>
+                              <div class="item-input">
+                                <input type="text" placeholder="cityMotoChannelName" id="autocomplete-dropdown-expand-channels"></div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="content-block" data-lang="findChannel10"></div>
+                    </div>
+                    </div>
+                </div>
+                <!------------>            
+            </div>
+        </div>
+    </div>
+</div>

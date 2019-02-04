@@ -1,0 +1,47 @@
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left"><a href="#" class="back link icon-only"> <i class="icon icon-back"></i></a></div>
+        <div class="center sliding">В путь!</div>
+        <div class="right"><a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a></div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="trip" class="page no-toolbar">
+        <div class="page-content">
+
+            <div class="content-block-title">Я на карте мира</div>
+            <div class="list-block">
+                <div class="list-block-label">Включи, если собрался в дорогу. Друзья смогут видеть где ты едешь сейчас.</div>
+                
+                  <ul>            
+                    <li>
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-toggle"></i></div>
+                        <div class="item-inner">
+                          <div class="item-title label">Поехали</div>
+                          <div class="item-input">
+                            <label class="label-switch">
+                              <input type="checkbox" id="trip" onchange="checktrip()">
+                              <div class="checkbox"></div>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  
+                <br><div class="list-block-label orange_text" id="triphint">Для экономии заряда батареи твоя геопозиция будет сохраняться только когда телефон включен, а Moto Helplist виден на экране.<br><br>
+                На остановках запускай приложение на минутку-другую.</div>
+            </div>
+               
+            <div id="tripmap">
+                <span style="width:42px; height:42px" class="preloader hide"></span>
+            </div>
+
+            <div class="content-block hide" id="triplink">
+                <a href="map.html" class="button">Во весь экран</a>
+            </div>            
+
+        </div>
+    </div>
+</div>

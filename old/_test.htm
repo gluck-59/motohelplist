@@ -1,0 +1,19 @@
+<script src="https://app.motohelplist.com/js/jquery.min.js"></script>
+<script>
+
+var i = 0;
+while (i < 5000)
+{    
+    var da1 = new Date();
+    $.get("https://app.motohelplist.com/onair.php?token="+da1.valueOf())
+    .success(function(data) 
+    {
+        var da2 = new Date();
+        document.write(da2-da1+' ');
+//        document.write(i++' ');    
+    });
+    i++;       
+}
+
+    
+</script>

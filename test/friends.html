@@ -1,0 +1,90 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left"><a href="#" class="back link icon-only"> <i class="icon icon-back"></i></a></div>
+    <div class="center sliding">Друзья</div>
+    <div class="right"><a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a></div>
+  </div>
+</div>
+
+<div class="pages navbar-through">
+    <div data-page="friends" class="page tabbar-labels-fixed">
+        <div class="toolbar tabbar tabbar-labels">
+            <div class="toolbar-inner">
+
+            <a href="#list_friends" class="tab-link active">
+                <i class="icon icon-tabbar-channels"></i>
+                <span class="tabbar-label">Список друзей</span>
+            </a>
+
+            <a href="#find_friends" class="tab-link">
+                <i class="icon icon-tabbar-search">
+                </i>
+                <span class="tabbar-label">Найти друзей</span>
+            </a>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="page-content hide-bars-on-scroll">
+        <div class="tabs">
+
+
+            <div id="list_friends" class="tab active"> 
+                <div class="" data-distance="50">
+                    <div class="list-block media-list no-margin"  id="friendResults"></div>
+                        <div class="content-block" id="nofriends">
+                            <p>У тебя пока нет друзей. Найди их:</p>
+                            <li>в Эфире</li><li>на Карте</li><li>по нику или телефону</li><li>в своем городе</li><li>на таком же мотоцикле</li>
+                        </div>
+                    <div id="error"></div>
+                </div>
+            </div>
+
+
+
+
+            <div id="find_friends" class="tab"> 
+                <div class="content-block">
+                    Найди знакомых по реалу, если тебе известны их телефоны или ники в Moto Helplist.
+                </div>                
+                
+                <div class="list-block">
+                  <ul>
+                    <li class="item-content">
+                      <div class="item-title label">Поиск</div>
+                      <div class="item-input">
+                        <input type="text" placeholder="ник или телефон" id="autocomplete-dropdown-expand-friends"></div>
+                    </li>
+                  </ul>
+                </div>
+                
+                
+                <div class="content-block">Также ты можешь найти новых друзей в своем городе или среди владельцев такого же мотоцикла как у тебя.</div>
+                <div  id="searchToFriends">
+                    <div class="content-block">
+                          <a href="#" data-link="city" class="button" >Земляки в <span class="mycity"></span></a>
+                    </div>
+                    <div class="content-block">
+                          <a href="#" data-link="motorcycle" class="button">Владельцы <span class="mycycle"></span></a>
+                    </div>
+                    <div class="content-block">
+                          <a href="#" data-link="city-motorcycle" class="button">Владельцы <span class="mycycle"></span> в <span class="mycity"></span></a>
+                    </div>
+                </div>
+                
+<div class="list-block media-list no-margin"  id="searchToFriendsResults"></div>
+<div class="content-block hide" id="noSearchToFriendsResults">
+    <p>Увы, пока ты здесь один.</p>
+    <p>Расскажи знакомым о Moto Helplist и пригласи их сюда.</p>    
+</div>
+
+            </div>
+            
+        </div>
+    </div>
+  </div>
+</div>

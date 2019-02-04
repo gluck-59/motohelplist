@@ -1,0 +1,49 @@
+ <script src="https://app.motohelplist.com/js/jquery.min.js"></script>
+ 
+<script>
+    
+function getfeed() {
+    
+    $.getJSON('v1/feed', function(data) {
+    $.each(data, function(index, elem) {
+       //console.log(elem);
+       switch (parseInt(elem.type_feed)) {
+           case 1: //city
+           document.writeln(elem.name+ ' переехал в ' + elem.name_object+'<br>'); 
+           break;
+           case 2: //moto
+           document.writeln(elem.name+ ' теперь на ' + elem.name_object+'<br>'); 
+           break;
+           case 5: 
+           document.writeln(elem.name+ ' ' + elem.text+'<br>'); 
+           break;
+           case 6: //moto
+           document.writeln(elem.name+ ' добавил в друзья ' + elem.name_object+'<br>'); 
+           break;
+           case 7: //moto
+           document.writeln(elem.name+ ' удалил из друзей ' + elem.name_object+'<br>'); 
+           break;
+
+       }
+       
+    })
+    });
+
+/*
+     var jqxhr = $.get("v1/feed")
+    .success(function(data) {
+//        $('#sms_request_status').text('Ответ SMS-центра: '+data+'.Осталось: '+ attempt-- +' попыток');
+       data = $(jquery).parseJSON(data);
+       console.log(data);
+       
+       data.each(function(i,k){
+          console.log(k); 
+       }); 
+    })
+  */ 
+    
+}
+</script>
+
+<input type="button" onclick="javascript:getfeed()" value="submit">
+

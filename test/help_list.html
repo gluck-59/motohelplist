@@ -1,0 +1,225 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left"><a href="#" class="back link icon-only"> <i class="icon icon-back"></i></a></div>
+    <div class="center sliding">Хелп-лист</div>
+    <div class="right">
+      <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <!-- Page, data-page contains page name-->
+  <div data-page="help_list" class="page">
+    <!-- Scrollable page content-->
+    <div class="page-content hide-bars-on-scroll">
+
+<!--
+        <div class="no_internet hide  content-block-title">Нет интернета</div>
+        <div id="" class="no_internet hide  content-block">
+            <p>Будет доступен только хелп-лист.</p>
+            <p>Если есть хоть какая-то связь, ты сможешь позвонить по телефонам из хелп-листа.</p>
+        </div>    
+        <div id="" class="no_internet hide  content-block">        
+            <input type="button" value="Хелп-лист" class="no_internet hide  button  button-big 1button-fill 1color-green" onclick="offline()">
+        </div>
+-->
+<div class="no_websql hide">
+            <div class="content-block-title">Хьюстон, у нас проблемы</div>        
+            <div hidden id="" class="content-block">
+                <p>Эта конфигурация оборудования не поддерживает нужные технологии. Использование хелп-листа невозможно.</p>
+            </div>
+            
+            <div class="content-block-title">Что можно сделать:</div>
+            <div class="content-block">
+            <p>Если у тебя Windows Mobile:</p>
+            <p>К сожалению ничего сделать нельзя. Нужно ждать, когда Microsoft станет современнее.</p>
+    
+            <p>Если у тебя Android или Ubuntu:</p>
+            <li>скачай и установи Google Chrome</li>
+            <li>открой app.motohelplist.com в Chrome</li>
+            <li>Нажми "Добавить на главный экран" в главном меню Chrome.</li>
+            <li>закрой Chrome и запусти иконку Moto Helplist c экрана телефона. Это проверенный способ, все обязано заработать.</li>
+
+            <p>&nbsp;</p>            
+
+            <p class="">Если у тебя Apple:</p>
+            <p>вместо Google Chrome открой Safari и проделай описанные выше шаги. Это проверенный способ, все обязано заработать.</p>
+            <p>&nbsp;</p>
+            <input type="button" value="Загрузить Google Chrome" class="button button-big button-round" onclick="getChrome()">
+        </div>    
+</div>            
+    
+        <div class="filter content-block-title">Что случилось?</div>    
+        <div class="content-block">Единая служба мото-спасения<br>«МотоРоссия»<br><br>
+            <a class="button button-big button-round button-fill color-red item-link item-content external" href="tel:88007751734">8-800-775-17-34</a>
+        </div>        
+
+        <div id="" class="filter">
+
+            <form id="filter_form" onsubmit="submitfilter(this); return false;">
+                <div class="row content-block-helplist-switches">
+                <div class="list-block">
+                  <ul>
+                    <li class="">
+                      <label class="label-checkbox item-content">
+                        <input type="checkbox" id="help_repair">
+                        <div class="item-media">
+                          <i class="icon icon-form-checkbox"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title">Ремонт</div>
+                        </div>
+                      </label>
+                    </li>
+    
+                    <li class="">
+                      <label class="label-checkbox item-content">
+                        <input type="checkbox" id="help_garage">
+                        <div class="item-media">
+                          <i class="icon icon-form-checkbox"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title">Гараж</div>
+                        </div>
+                      </label>
+                    </li>
+    
+                    <li class="">
+                      <label class="label-checkbox item-content">
+                        <input type="checkbox" id="help_food">
+                        <div class="item-media">
+                          <i class="icon icon-form-checkbox"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title">Поесть</div>
+                        </div>
+                      </label>
+                    </li>
+    
+                    <li class="">
+                      <label class="label-checkbox item-content">
+                        <input type="checkbox" id="help_bed">
+                        <div class="item-media">
+                          <i class="icon icon-form-checkbox"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title">Ночлег</div>
+                        </div>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="list-block">
+                <ul>                          
+                    <li class="">
+                      <label class="label-checkbox item-content">
+                        <input type="checkbox" id="help_beer">
+                        <div class="item-media">
+                          <i class="icon icon-form-checkbox"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title">По пиву</div>
+                        </div>
+                      </label>
+                    </li>
+    
+                    <li class="">
+                      <label class="label-checkbox item-content">
+                        <input type="checkbox" id="help_strong">
+                        <div class="item-media">
+                          <i class="icon icon-form-checkbox"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title">Покрепче</div>
+                        </div>
+                      </label>
+                    </li>                
+    
+                    <li class="">
+                      <label class="label-checkbox item-content">
+                        <input type="checkbox" id="help_party">
+                        <div class="item-media">
+                          <i class="icon icon-form-checkbox"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title">Компания</div>
+                        </div>
+                      </label>
+                    </li>                                
+    
+    
+                    <li class="">
+                      <label class="label-checkbox item-content">
+                        <input type="checkbox" id="help_excursion">
+                        <div class="item-media">
+                          <i class="icon icon-form-checkbox"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title">Экскурсия</div>
+                        </div>
+                      </label>
+                    </li>                                
+    
+                  </ul>
+                </div> 
+                </div>
+
+                <div class="filter content-block">
+                    <input type="submit" class="button button-big button-round button-fill color-green" value="Найти">
+                </div>
+            </form>
+
+        <div id="helplistResults" class="1content-block"></div>
+        <!--div class="page-content content-block-title"></div-->
+
+      
+    </div>
+</div>
+
+
+<script type="text/template7"  id="hlusers" >
+    <div class="1">
+        <p class="text-right"  id="scrollto">
+            <span id="abc" class="hide gray_text 1content-block-title" onclick="sortingDist()">города по алфавиту &nbsp;&#9650;&nbsp;</span>
+            <span id="dist" class="gray_text 1content-block-title" onclick="sortingABC()">города по расстоянию &nbsp;&#9650;&nbsp;</span>
+        </p>
+    </div>
+
+    <div class="list-block media-list">
+        <ul id="userslist" >
+            {{#each users}}
+            <li  class="hluser">
+                <a href="tel:{{phone}}" class="item-link item-content external">
+                    <div class="item-inner">
+
+                        <div class="item-title">{{name}} </div>
+                        <div class="item-subtitle"  id="{{hlcity}}">{{hlcity}}{{#if distance}}, {{distance}} km{{/if}}</div>
+                        <div class="item-text">
+                            {{#if help_repair}}<span class="red tip">Ремонт</span>{{/if}}
+                            {{#if help_garage}}<span class="orange tip">Гараж</span>{{/if}}
+                            {{#if help_food}}<span class="orange tip">Поесть</span>{{/if}}
+                            {{#if help_bed}}<span class="red tip">Ночлег</span>{{/if}}
+                            {{#if help_beer}}<span class="green tip">По пиву</span>{{/if}}
+                            {{#if help_strong}}<span class="green tip">Покрепче</span>{{/if}}
+                            {{#if help_party}}<span class="blue tip">Компания</span>{{/if}}
+                            {{#if help_excursion}}<span class="blue tip">Экскурсия</span>{{/if}}</div>          
+                        {{#if description}}
+                            <div class="item-text">{{description}}</div>
+                        {{/if}}
+                    </div>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</script>    
+  
+<script>
+    if (navigator.onLine) offline();
+</script>
+
+
+    </div>
+  </div>
+</div>
+

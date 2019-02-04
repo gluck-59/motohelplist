@@ -1,0 +1,161 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left"><a href="#" class="back link icon-only"><i class="icon icon-back"></i></a></div>
+    <div class="center sliding" data-lang="settings"></div>
+    <div class="right">
+        <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="settings" class="page">
+    <div class="page-content hide-bars-on-scroll">
+        
+        <form id="settings" class="store-data">
+        <div class="content-block-title" data-lang="interface"></div>
+        <div class="list-block">
+          <ul>
+            <li>
+                <a href="#" class="item-link smart-select" data-back-on-select="true">
+                    <select name="userLanguage" onchange="location.reload();"></select>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title" data-lang="Language"></div>
+                            <div class="item-after"></div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            
+            <li>
+                <a href="#" class="item-link smart-select" data-back-on-select="true">
+                    <select name="relativeTime" onchange="setTimeout(function(){doMoment()},100)"></select>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title" data-lang="eventTime"></div>
+                            <div class="item-after" data-lang="relative"></div>
+                        </div>
+                    </div>
+                </a>
+            </li>            
+            
+            <li>
+                <a href="#" class="item-link smart-select" data-back-on-select="true">
+                    <select name="sosAirOnly" onchange="setTimeout(function(){digestFill()},1000)"></select>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title" data-lang="airChannels"></div>
+                            <div class="item-after" data-lang="all"></div>
+                        </div>
+                    </div>
+                </a>
+            </li>           
+             
+            <li>
+                <a href="#" class="item-link smart-select" data-back-on-select="true">
+                    <select name="animation" onchange="animationCrutch()"></select>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title" data-lang="interfaceAnimation"></div>
+                            <div class="item-after" data-lang="full"></div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+          </ul>
+        </div>   
+
+        <div class="content-block-title" data-lang="map"></div>
+        <div class="list-block">
+            <ul>
+                <li>
+                    <a href="#" class="item-link smart-select">
+                        <select name="pois" multiple>
+                        </select>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title" data-lang="mapLayers"></div>
+                          </div>
+                        </div>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" class="item-link smart-select" data-back-on-select="true">
+                        <select name="showTripFriendsOnly"></select>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title" data-lang="showTripFriendsOnly"></div>
+                                <div class="item-after" data-lang="all"></div>
+                            </div>
+                        </div>
+                    </a>
+                </li>                
+                
+                <li>
+                    <a href="#" class="item-link smart-select" data-back-on-select="true">
+                        <select name="initZoom"></select>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title" data-lang="initZoom"></div>
+                                <div class="item-after">14</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="#" class="item-link smart-select" data-back-on-select="true">
+                        <select name="clusterPoi"></select>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title" data-lang="clusterPoi"></div>
+                                <div class="item-after" data-lang="beside"></div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" class="item-link smart-select" data-back-on-select="true">
+                        <select name="geocodeAddr"></select>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title" data-lang="showPoiAddress"></div>
+                                <div class="item-after" data-lang="no"></div>
+                            </div>
+                        </div>
+                    </a>
+                </li>                
+                
+                <li>
+                    <a href="#" class="item-link smart-select" data-back-on-select="true">
+                        <select name="showTraffic"></select>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title" data-lang="showTraffic"></div>
+                                <div class="item-after" data-lang="no"></div>
+                            </div>
+                        </div>
+                    </a>
+                </li>                                
+    
+            </ul>
+        </div>
+
+
+ 
+        </form>  
+        
+        
+
+        <div class="content-block-title" data-lang="helplist"></div>
+        <div class="content-block">
+            <p><a href="#" class="button" onclick="updateHelplistManually()" data-lang="update"></a></p>
+            <p><span data-lang="updated"></span>&nbsp;<span id="updateHelplistDate" time=""></span><br>(<span id="helplist_local_total"></span>&nbsp;<span data-lang="members"></span>)</p>
+        </div>
+      
+    </div>
+  </div>
+</div>

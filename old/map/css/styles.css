@@ -1,0 +1,288 @@
+/* body desktop class */
+.desktop
+{
+    width: 600px;
+    margin: 0 auto;
+    background-color: #444;
+    background: url('../img/pattern1.png') repeat;
+}
+
+/* колонки по ширине */
+div[class*="col-"] {
+  background: #fff;
+  text-align: center;
+  color: #000;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+.row {
+  margin-bottom: 15px;
+}      
+
+
+.avatar-wrapper
+{
+    margin: 0 -5px;
+}
+
+.avatar {
+    max-width: 100%;
+    max-height: 100%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: contain;
+    padding: 2px
+}
+.avatar.male {
+    border: 2px solid #5881A6
+}
+.avatar.female {
+    border: 2px solid #d35d7f
+}
+.male {color: #5881A6}
+.female {color: #d35d7f}
+
+
+
+
+
+.text-right {text-align: right}
+.hide {display: none}
+
+.tip {
+    display: inline-block;
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 3px;
+    margin: 5px 0px 4px 0;    
+    padding: 0.25rem 0.25rem 0.22rem;
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+.content-block-helplist-switches
+{
+    background-color: white;
+    margin: 0px 0;
+}
+
+.content-block-helplist-switches .list-block, .no-margin
+{
+    margin: 0;        
+}
+
+.content-block-helplist-switches .list-block .item-inner:after,
+.content-block-helplist-switches .list-block ul:before,
+.content-block-helplist-switches .list-block ul:after
+{
+    background-color: white;
+}
+
+
+
+/* дополнительные иконки */
+
+i.icon.icon-form-city {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-form-city-ios.svg);
+}
+i.icon.icon-form-cycle {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-form-cycle-ios.svg);
+}
+i.icon.icon-form-cyclemore {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-form-cyclemore-ios.svg);
+}
+i.icon.icon-form-active {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-form-active-ios.svg);
+}
+i.icon.icon-form-repair {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-form-repair-ios.svg);
+}
+i.icon.icon-form-garage {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-form-garage-ios.svg);
+}
+i.icon.icon-form-bed {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-form-bed-ios.svg);
+}
+i.icon.icon-form-food {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-form-food-ios.svg);
+}
+i.icon.icon-form-beer {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-form-beer-ios.svg);
+}
+i.icon.icon-form-strong {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-form-strong-ios.svg);
+}
+i.icon.icon-form-party {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-form-party-ios.svg);
+}
+i.icon.icon-form-excursion {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-form-excursion-ios.svg);
+}
+i.icon.icon-form-helplist {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-form-helplist-ios.svg);
+}
+i.icon.icon-form-news {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-form-news-ios.svg);
+}
+i.icon.icon-form-help {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-form-help-ios.svg);
+}
+i.icon.icon-form-exit {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-form-exit-ios.svg);
+}
+i.icon.icon-tabbar-channels {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-tabbar-channels-ios.svg);
+}
+.active i.icon.icon-tabbar-channels 
+{
+    background-image: url(../img/i-tabbar-channels-active-ios.svg);        
+}
+i.icon.icon-tabbar-channels-add {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-tabbar-channels-add-ios.svg);
+}
+.active i.icon.icon-tabbar-channels-add
+{
+    background-image: url(../img/i-tabbar-channels-add-active-ios.svg);        
+}
+i.icon-tabbar-search {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-tabbar-search-ios.svg);
+}
+.active i.icon-tabbar-search
+{
+    background-image: url(../img/i-tabbar-search-active-ios.svg);        
+}
+i.icon.icon-form-friends {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-form-friends-ios.svg);
+}
+
+
+/* colors */
+.red { background-color: red} 
+.orange { background-color: #f08a24} 
+.green { background-color: #43AC6A} 
+.blue { background-color: #5881A6} 
+
+.gray_text {color: #8e8e93; font-weight: 200}
+
+
+
+.badge
+{
+    text-transform: uppercase;
+    padding: 1px 6px;
+}
+
+.swipeout.transitioning .swipeout-actions-right a {text-align: center}
+
+.statusbar-overlay {background: black}
+
+.list-block .item-text { height: auto }
+
+.list-block .hluser .item-text, .list-block .text-feed  { -webkit-line-clamp: 6}
+
+
+.infinite-scroll-preloader {
+  display: none;
+  margin-top:-20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.preloader-top {
+    display: none;   
+    text-align: center; 
+    margin-bottom: -30px;
+}
+
+.infinite-scroll-preloader .preloader {
+  width:34px;
+  height:34px;
+}  
+
+
+#avatar_upload {display: none}
+
+img {max-width: 100%; max-height: 20vh}
+
+
+/* чаты */
+.message {
+    max-width: 80%;
+    margin: 5px 10px 0;    
+}
+.message .message-text
+{
+    padding: 5px 17px 3px;
+    /* было
+        padding: 6px 16px 9px;
+        */
+}
+.message-sent .message-text
+{
+    background-color: #DCF9DE;
+    color: #000; 
+    /* было
+    background-color: #00d449;
+    color: #fff;
+    */
+}
+.message-date
+{
+    font-style: oblique;
+    color: gray;
+    font-size: 0.7em;
+    text-align: right;
+}
+.message-received.message-with-avatar .message-name
+{
+    margin-left: 35px;
+}
+.message-sent.message-with-avatar .message-name
+{
+    margin-right: 35px;
+}
+.messagebar~.page-content {
+    padding-bottom: 60px;
+}

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ru" manifest="manifest.appcache">
+<!--html lang="ru"-->
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui"/>
+    
+    <!-- for ios 7 style, multi-resolution icon of 152x152 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-barstyle" content="black-translucent">
+    <link rel="apple-touch-icon" href="img/logo_152.png">
+    <!-- for Chrome on Android, multi-resolution icon of 196x196 -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" sizes="196x196" href="img/logo_196.png">
+
+    <title>Moto Helplist</title>
+    <link rel="stylesheet" href="sass/templates.css"/>
+    <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" /> 
+   
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/ohsnap.js"></script>    
+    <script src="/js/moment.min.js"></script>       
+    <script src="/js/cookie.js"></script>
+    <script src="/js/helplist.min.js"></script>    
+</head>
+<body>
+<div class="hide" id="loader"><img src="../img/loader.gif"></div>
+<div id="content">
+     <div onclick="window.history.go(-1)"><img src="img/arrow_back.png"></div>
+    <p class="text-center subheader">Единая служба мото-спасения<br>«МотоРоссия»</p>
+    <p class="text-center">
+        <a class="alert expand round button" href="tel:8-800-775-17-34">8-800-775-17-34</a>
+    </p>
+    <hr>
+     <br><p>&nbsp;</p>
+     
+    <div id="no_internet">
+        <h3 class="">Нет интернета</h3>
+        <p class="subheader">Будет доступен только хелп-лист.</p>
+        <p class="subheader">Если есть хоть какая-то связь, ты сможешь позвонить по телефонам из хелп-листа.</p>
+        <p>&nbsp;</p>
+        <input type="button" value="Ок" class="expand round small button" onclick="offline()">
+    </div>    
+    
+    <div id="no_websql" class="hide small-12">
+        <h3 class="">Хьюстон, у нас проблемы</h3>
+        <p class="subheader">Эта конфигурация оборудования не поддерживает нужные технологии. Использование хелп-листа невозможно.</p>
+        <h3 class="">Что можно сделать:</h3>
+        <p class="">Если у тебя Windows Mobile:</p>
+        <p class="subheader">К сожалению ничего сделать нельзя. Нужно ждать, когда Microsoft станет современнее.</p>
+
+        <p class="">Если у тебя Android или Ubuntu:</p>
+        <p class="subheader">- скачай и установи Google Chrome<br>        
+        - открой app.motohelplist.com в Chrome<br>
+        - НЕ УХОДИ СО СТРАНИЦЫ ВХОДА. Нажми "Добавить на главный экран" в главном меню Chrome. ТОЛЬКО СО СТРАНИЦЫ ВХОДА<br>
+        - закрой Chrome и запусти иконку Moto Helplist c экрана телефона. Это проверенный способ, все обязано заработать.</p>
+        
+        <p class="">Если у тебя Apple:</p>
+        <p class="subheader">- вместо Google Chrome открой Safari и проделай описанные выше шаги. Это проверенный способ, все обязано заработать.</p>
+        <p>&nbsp;</p>
+        <input type="button" value="Загрузить Google Chrome" class="expand round small button" onclick="getChrome()">
+    </div>        
+
+    <div id="filter" class="hide small-12" style="margin-top: -2em;">
+        <h4>Что случилось?</h4>
+        <!--p class="subheader">Если не выбрать ничего, покажет всех</p-->
+        <form id="filter_form" onsubmit="submitfilter(this); return false;">
+            <div class="row">
+                <div class="left small-6 helplist">
+                    <input type="checkbox" class="custom_checkbox" id="help_repair">
+                    <label for="help_repair">Ремонт</label>
+                </div>
+
+                <div class="left small-6 helplist">                
+                    <input type="checkbox" class="custom_checkbox" id="help_garage">
+                    <label for="help_garage">Гараж</label>
+                </div>
+
+                <div class="left small-6 helplist">                
+                    <input type="checkbox" class="custom_checkbox" id="help_food">
+                    <label for="help_food">Поесть</label>    
+                </div>
+
+                <div class="left small-6 helplist">                
+                    <input type="checkbox" class="custom_checkbox" id="help_bed">
+                    <label for="help_bed">Ночлег</label>        
+                </div>
+
+                <div class="left small-6 helplist">                
+                    <input type="checkbox" class="custom_checkbox" id="help_beer">
+                    <label for="help_beer">По пиву</label>            
+                </div>
+
+                <div class="left small-6 helplist">                
+                    <input type="checkbox" class="custom_checkbox" id="help_strong">
+                    <label for="help_strong">Покрепче</label>                
+                </div>
+
+                <div class="left small-6 helplist">                
+                    <input type="checkbox" class="custom_checkbox" id="help_party">
+                    <label for="help_party">Компания</label>                    
+                </div>
+
+                <div class="left small-6 helplist">                
+                    <input type="checkbox" class="custom_checkbox" id="help_excursion">
+                    <label for="help_excursion">Экскурсия</label>                        
+                </div>
+            </div>
+            <br>
+            <div class="small-12">
+                <input type="submit" class="success small expand round button" value="Фильтр" onclick="$('#loader').removeClass('hide')">
+            </div>
+        </form>
+    <div id="results"></div>
+    <div id="ohsnap"></div>
+</div></div>
+
+
+  
+<script>
+    if (navigator.onLine) offline();
+</script>
+
+</body>
+</html>
+    

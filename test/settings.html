@@ -1,0 +1,220 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left"><a href="#" class="back link icon-only"><i class="icon icon-back"></i></a></div>
+    <div class="center sliding">Настройки</div>
+    <div class="right">
+      <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <!-- Page, data-page contains page name-->
+  <div data-page="settings" class="page">
+    <!-- Scrollable page content-->
+    <div class="page-content hide-bars-on-scroll">
+        
+    
+        
+
+
+
+
+        <form id="settings" class="store-data">
+        <div class="content-block-title">Интерфейс</div>
+        <div class="list-block">
+          <ul>
+            <li>
+                <a href="#" class="item-link smart-select" data-back-on-select="true">
+                    <!-- select -->
+                    <select name="relativeTime" onchange="setTimeout(function(){doMoment()},100)">
+                        <option value="1">Относительное</option>
+                        <option value="0">Абсолютное</option>
+                    </select>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <!-- Select label -->
+                            <div class="item-title">Время событий</div>
+                            <!-- Selected value, not required -->
+                            <div class="item-after">Относительное</div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            
+            <li>
+                <a href="#" class="item-link smart-select" data-back-on-select="true">
+                    <!-- select -->
+                    <select name="sosAirOnly" onchange="setTimeout(function(){digestFill()},1000)">
+                        <option value="1">Только SOS</option>
+                        <option value="0">Все</option>
+                    </select>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <!-- Select label -->
+                            <div class="item-title">Каналы Эфира</div>
+                            <!-- Selected value, not required -->
+                            <div class="item-after">Все</div>
+                        </div>
+                    </div>
+                </a>
+            </li>           
+             
+            <li>
+                <a href="#" class="item-link smart-select" data-back-on-select="true">
+                    <!-- select -->
+                    <select name="animation" onchange="animationCrutch()">
+                        <option value="1">Полная</option>
+                        <option value="0">Частичная</option>
+                    </select>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <!-- Select label -->
+                            <div class="item-title">Анимация интерфейса</div>
+                            <!-- Selected value, not required -->
+                            <div class="item-after">Полная</div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+          </ul>
+        </div>   
+
+        <div class="content-block-title">Карта</div>
+        <div class="list-block">
+            <ul>
+                <li>
+                    <a href="#" class="item-link smart-select">
+                        <select name="pois" multiple>
+                            <option value="hotels" selected>Отели</option>
+                            <option value="services" selected>Мото-сервисы</option>
+                            <option value="tireservices" selected>Мото-шиномонтажи</option>
+                            <option value="places" selected>Места сбора байкеров</option>
+                            <option value="parkings" selected>Мото-паркинги</option>
+                        </select>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Слои карты</div>
+                          </div>
+                        </div>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" class="item-link smart-select" data-back-on-select="true">
+                        <!-- select -->
+                        <select name="showTripFriendsOnly">
+                            <option value="0">Все</option>
+                            <option value="1">Только друзья</option>
+                        </select>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <!-- Select label -->
+                                <div class="item-title">В пути</div>
+                                <!-- Selected value, not required -->
+                                <div class="item-after">Все</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>                
+                
+                <li>
+                    <a href="#" class="item-link smart-select" data-back-on-select="true">
+                        <!-- select -->
+                        <select name="initZoom">
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>                
+                            <option value="7">7</option>                
+                            <option value="8">8</option>                
+                            <option value="9">9</option>                
+                            <option value="10">10</option>                
+                            <option value="11">11</option>                
+                            <option value="12">12</option>                
+                            <option value="13">13</option>                
+                            <option value="14">14</option>                
+                            <option value="15">15</option>                
+                            <option value="16">16</option>                
+                            <option value="17">17</option>                
+                            <option value="18">18</option>                
+                            <option value="19">19</option>                
+                            <option value="20">20</option>                
+                            <option value="21">21</option>                
+                        </select>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <!-- Select label -->
+                                <div class="item-title">Масштаб карты</div>
+                                <!-- Selected value, not required -->
+                                <div class="item-after">14</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="#" class="item-link smart-select" data-back-on-select="true">
+                        <select name="clusterPoi">
+                            <option value="11">Да</option>
+                            <option value="2">Нет</option>
+                        </select>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Объединять метки</div>
+                                <div class="item-after">Да</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" class="item-link smart-select" data-back-on-select="true">
+                        <select name="geocodeAddr">
+                            <option value="1">Показывать</option>
+                            <option value="0">Не показывать</option>
+                        </select>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Адреса меток</div>
+                                <div class="item-after">Не показывать</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>                
+                
+                <li>
+                    <a href="#" class="item-link smart-select" data-back-on-select="true">
+                        <select name="showTraffic">
+                            <option value="1">Показывать</option>
+                            <option value="0">Не показывать</option>
+                        </select>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title">Google Пробки</div>
+                                <div class="item-after">Не показывать</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>                                
+    
+    
+    
+            </ul>
+        </div>
+
+
+ 
+        </form>  
+        
+        
+
+        <div class="content-block-title">Хелп-лист</div>
+        <div class="content-block">
+            <p><a href="#" class="button" onclick="updateHelplistManually()">Обновить</a></p>
+            <p><span>Обновлен </span><span id="updateHelplistDate" time=""></span></p>
+        </div>
+      
+    </div>
+  </div>
+</div>

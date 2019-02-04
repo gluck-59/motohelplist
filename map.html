@@ -1,0 +1,26 @@
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left"><a href="#" class="back link icon-only"> <i class="icon icon-back"></i></a></div>
+        <div class="center sliding" data-lang="map"><!-- Карта --></div>
+        <div class="right"><a href="#" data-popover=".popover-map" class="open-popover"><i class="icon icon-settings"></i></a><a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a></div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="map" class="page no-toolbar">
+        <div class="page-content" id="mapholder">
+            
+          <form data-search-list=".list-block-search" class="searchbar searchbar-init submitgeocoder" id="submitgeocoder">
+            <div class="searchbar-input">
+              <input type="search" id="geocoderaddress" placeholder="cityOrCoords"><a href="#" class="searchbar-clear"></a>
+            </div>
+            <!--     <a href="#" class="searchbar-cancel">Cancel</a>>
+            <a href="#" class="button" style="padding: 0 10px 0 3px; margin: 0 0 0 7px" id="submitgeocoder">&#128269;</a -->
+          </form>
+
+
+          <div id="map"><div style="position: absolute;top: calc(50vh - 50px);left: calc(50vw - 50px);width: 100px;height: 100px;opacity: 0.3;" class="preloader"></div></div>
+          
+        </div>
+    </div>
+</div>
+

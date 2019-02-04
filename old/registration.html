@@ -1,0 +1,152 @@
+<!doctype html>
+<!--html lang="ru" manifest="manifest.appcache"-->
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui, user-scalable=no"/>
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="sass/templates.css"/>
+
+    <script src="/js/jquery.min.js"></script>
+    <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script-->
+
+    <script src="js/jquery-ui.min.js"></script> 
+    <script src="js/juqery.ui.validate.min.js"></script>    
+    <script src="js/jquery.ui.autocomplete.min.js"></script>
+<script>
+    
+    function sms_request()
+    {
+        $('#sms_request_state').hide(animation);
+        $('#status').hide(animation);
+        $('#sms_request_status').removeClass('hide');
+    }
+    
+    function code_check() 
+    {
+       var jqxhr = $.get("sms_check.php?phone="+$('[name=phone]').val() + '&code=' + $('#response').val() ) 
+        .success(function(data) {
+//            console.log(data); 
+            if (data==1)
+            {
+                $('#loader').show();                
+                $('#registration_form').submit();
+            }
+            else
+            {
+                $('#status').text('Неверный код из СМС');
+                $('#status').show(animation);        
+                return data;
+            }  
+        return data;
+       });
+    }
+    
+    function manifest()
+    {
+        $('#content').toggle();
+        $('#manifest_text').toggle();        
+    }
+    </script>
+</head>
+
+<body class="large-3">
+<div id="content" >
+    <!--a href="login.html" role="external"><div><img src="img/arrow_back.png"></div></a-->
+
+    <div class="row">
+        <div class="small-12 columns">
+            <form class="" method="post" action="registration.php" id="registration_form" onsubmit="validate(); return false;" autocomplete="off">
+                <br>
+                <h3 class="">Регистрация</h3>
+                <h6 id="unregistered" class="subheader hide">Судя по всему, мы незнакомы. Сейчас самое время исправить это.</h6>
+                <div class="row collapse prefix-radius">
+                    <div class="small-4 columns">
+                        <span class="prefix">Ник</span>
+                    </div>
+                    <div class="small-8 columns">
+                        <input autofocus type="text" name="name" placeholder="для чата, необязательно">
+                    </div>
+                </div>
+                
+                <div class="row collapse prefix-radius">
+                    <div class="small-4 columns">
+                        <span class="prefix">Город</span>
+                    </div>
+                    <div class="small-8 columns">
+                        <input id="city" name="city" class="ui-autocomplete-input" placeholder="ЛАТИНИЦА, обязательно" type="text" autocomplete="off"></input>
+                    </div>
+                </div>
+                
+                <div class="row collapse prefix-radius" id="smsCodeField">
+                        <div class="small-4 columns">
+                            <span class="prefix">SMS-код</span>
+                        </div>
+                        <div class="small-8 columns">
+                            <input type="tel" id="response" name="code" placeholder="4 цифры">
+                        </div>
+                </div>
+                
+                <div id="status" class=" hide"></div>
+                
+                <!--div id="waiting" class="">
+                    <p id="sms_request_state"><a href="#" onclick="sms_request();return false;">Не приходит SMS?</a></p>
+                    <p id="sms_request_status" class="hide subheader">Секундочку...</p>
+                </div-->
+                
+                <p>&nbsp;</p>
+                
+                <div class="text-center">
+                <div class="small-6 columns">
+                    <input checked id="male" type="radio" name="gender" value="0">
+                    <label for="male" class="man">Я байкер</label>
+                </div>
+                <div class="small-6 columns">
+                    <input id="female" type="radio" name="gender" value="1">
+                    <label for="female" class="fem">Я байкерша</label>
+                </div>
+                
+                <p>&nbsp;</p>
+                
+                <input id="manifest" type="checkbox" class="custom_checkbox">
+                <label class="agree-manifest" for="manifest">
+                    <a href="#" onclick="$('#content').toggle();$('#manifest_text').toggle();return false">Со всем</a> согласен
+                </label>
+               
+                <p>&nbsp;</p>
+                
+                </div>
+                
+                <input type="hidden" name="phone" value="">
+                <input type="hidden" name="password" value="">
+                <input type="hidden" name="id_city" id="id_city" value="">                
+                <input type="hidden" name="id_sms" id="id_sms" value="">
+                <input type="hidden" id="usersession" value="">
+                <input type="submit" value="Регистрация" class="small round expand success button">
+
+            </form>
+        </div>
+    </div>
+</div>
+<!--/content-->
+
+<div class="row">
+    <div class="small-12 hide" id="manifest_text" style="background-color: white;">
+        <iframe src="manifest.html" style="margin: 0em -1em;height: 100vh;width: 100vw;padding: 0.5em;border: 0;"></iframe>
+        <a onclick="manifest()"><input type="button" class="small round expand success button" value="Принимаю"></a>
+    </div>
+</div>                    
+<div id="loader"><img src="../img/loader.gif"></div>
+<script>
+        $('#loader').hide();
+    
+        $("[name=city]").click(function() {
+            $('html, body').animate({
+                scrollTop: $("[name=name]").offset().top
+            }, 300);
+});
+    
+        
+</script>
+</body>
+</html>
