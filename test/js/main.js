@@ -750,7 +750,7 @@ myApp.onPageInit('profile', function (page)
                     success: function(response)
                     {
                         console.log('аватар удален', response);
-                        window.open('https://app.motohelplist.com/', '_self');
+                        window.open('//app.motohelplist.com/', '_self');
                         setTimeout(function() {myApp.mainView.loadPage('profile.html')}, 500);
                     },
                     error: function(response)
@@ -789,7 +789,7 @@ myApp.onPageInit('profile', function (page)
 */
                 success: function (response) {
                     console.log('аватар загружен', response);
-                    window.open('https://app.motohelplist.com/', '_self');
+                    window.open('//app.motohelplist.com/', '_self');
                     setTimeout(function() {myApp.mainView.loadPage('profile.html')}, 500);
 
                     myApp.addNotification({

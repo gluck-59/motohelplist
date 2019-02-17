@@ -29,7 +29,7 @@ if ( isset($_POST['bug_description']) OR isset($_POST['screenshot']))
         if (move_uploaded_file($_FILES['screenshot']['tmp_name'], $uploadfile)) 
         {
             $message .= $_POST['screenshot'];
-            $message .='<p><img style="height:400px" src="https://app.motohelplist.com/'.$uploadfile.'"></p>';
+            $message .='<p><img style="height:400px" src="//app.motohelplist.com/'.$uploadfile.'"></p>';
             $message .= 'Скриншот: app.motohelplist.com/'.$uploadfile;            
         } else {
 // выведется в морду юзеру 

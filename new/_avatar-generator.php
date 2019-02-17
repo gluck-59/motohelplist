@@ -52,7 +52,7 @@ function makeAvatar($id, $name = 0)
     
     if (file_exists('img/avatar/'.$id.'.jpg')) 
     {
-        echo ('<a href="https://app.motohelplist.com/img/avatar/'.$id.'.jpg">link</a><br><br>');
+        echo ('<a href="//app.motohelplist.com/img/avatar/'.$id.'.jpg">link</a><br><br>');
 
     }
         
@@ -98,7 +98,7 @@ function makeAvatar($id, $name = 0)
     imagejpeg($img,'img/avatar/'.$id.'.jpg',75);
     $response = Array('avatar' => "//app.motohelplist.com/img/avatar/".$id.".jpg");
 
-    echo ('<a href="https://app.motohelplist.com/img/avatar/'.$id.'.jpg">link</a><br><br>');
+    echo ('<a href="//app.motohelplist.com/img/avatar/'.$id.'.jpg">link</a><br><br>');
     
     // освобождаем память
     imagedestroy($img);
