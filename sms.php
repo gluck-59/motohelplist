@@ -5,15 +5,9 @@ if (basename(__FILE__) == basename($_SERVER['PHP_SELF'])) {
     die (); 
 }
 
-echo '<pre>';
-print_r($_SERVER);
-
-
-var_dump(basename(__FILE__));
-echo '<br>';
-var_dump(basename($_SERVER['PHP_SELF']));
-
-die;
+if ($_SERVER['SERVER_ADDR'] != '78.155.212.103') {
+    die();
+}
 
 /////////////////////////////////////////////////////////////
 /* 
