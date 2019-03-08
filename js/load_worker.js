@@ -33,7 +33,7 @@ else
             url = urls[i]+e.data.messagelastupdate;
        
         transport = new XMLHttpRequest();
-        transport.open('GET', 'https://app.motohelplist.com/api/v1/'+url, false);  
+        transport.open('GET', '//app.motohelplist.com/api/v1/'+url, false);
         transport.setRequestHeader('x-access-token', e.data.token);
         transport.send();
 

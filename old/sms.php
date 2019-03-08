@@ -185,7 +185,7 @@ function push($text)
         "id" => "1105",
         "key" => "65d28daa7a2f17944bbde01f49e70c53",
         "text" => "$text",
-        "icon" => "https://app.motohelplist.com/img/logo_152.png",
+        "icon" => "//app.motohelplist.com/img/logo_152.png",
         "title" => "Moto Helplist"//date("Y-m-d H:i:s") 
       ),
 //      CURLOPT_SAFE_UPLOAD => true, // выдаст респонс в морду клиента - не включать

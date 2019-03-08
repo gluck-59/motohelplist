@@ -9,7 +9,7 @@ self.addEventListener('message', function(e)
     if (!navigator.onLine) self.close();
 
     transport = new XMLHttpRequest();
-    transport.open('GET', 'https://app.motohelplist.com/api/v1/helplist/'+e.data.lastupdate, true);  
+    transport.open('GET', '//app.motohelplist.com/api/v1/helplist/'+e.data.lastupdate, true);
     transport.setRequestHeader('x-access-token', e.data.token);
     transport.onreadystatechange = function()
     {

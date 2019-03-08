@@ -26,7 +26,7 @@ if ($_POST['phone'] AND $_POST['password'])
     }
     else // иначе нахуй... к терапевту
     {
-        header( 'Location: https://app.motohelplist.com/old/login.php', true, 303 ); 
+        header( 'Location: //app.motohelplist.com/old/login.php', true, 303 );
     }
         
     
@@ -37,8 +37,8 @@ if ($_POST['phone'] AND $_POST['password'])
             // порядок, пропускаем
             $_SESSION['id_user'] = $user->id_user;
             setcookie('id_user',$user->id_user,time()+$cookieLifetime);
-            header( 'Location: https://app.motohelplist.com/old/onair.php?token='.time(), true, 303 ); // оригинал
-//            header( 'Location: https://app.motohelplist.com/old/onair.php', true, 303 );
+            header( 'Location: //app.motohelplist.com/old/onair.php?token='.time(), true, 303 ); // оригинал
+//            header( 'Location: //app.motohelplist.com/old/onair.php', true, 303 );
 
             
             // ну и в блокнотик запишем
@@ -112,5 +112,5 @@ if ($delivered != 'delivered')
 }
 else
 {
-    header( 'Location: https://app.motohelplist.com/old/registration.php', true, 303 ); 
+    header( 'Location: //app.motohelplist.com/old/registration.php', true, 303 );
 }
