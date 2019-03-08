@@ -1,12 +1,22 @@
-<?php 
+<?php
 
-if (basename(__FILE__) == basename($_SERVER['PHP_SELF'])) { 
-    header($_SERVER['SERVER_PROTOCOL'].' 404 Not Found'); 
-    die (); 
+if (basename(__FILE__) == basename($_SERVER['PHP_SELF'])) {
+    header($_SERVER['SERVER_PROTOCOL'].' 404 Not Found');
+    die ();
 }
 
+echo '<pre>';
+print_r($_SERVER);
+
+
+var_dump(basename(__FILE__));
+echo '<br>';
+var_dump(basename($_SERVER['PHP_SELF']));
+
+die;
+
 /////////////////////////////////////////////////////////////
-/* 
+/*
 /*  НИЧЕГО НЕ ЭХАТЬ, ВСЕ ВЫВОДИТСЯ В КЛИЕНТА
 /*  ТОЛЬКО ПУШ И EMAIL
 /*
@@ -34,8 +44,8 @@ $wapurl = false;
 $ip = $_SERVER['HTTP_X_REAL_IP'];
 
 
- 
-/* 
+
+/*
 * использование функций
 */
 
@@ -44,42 +54,42 @@ if ($code and $phone)  // если при инклюде скрипта есть
     $send = send($host, $port, $login, $password, $phone, $text, $sender = false, $wapurl = false );
     //$send = send_sms($host, $port, $login, $password, $phone, $text, $sender = false, $wapurl = false ); Ali - не работает
 }
-    
+
 
 if ($balance)  // если при инклюде скрипта есть $balance, то это проверка баланса
-{    
+{
     $balance = balance($host, $port, $login, $password);
 }
- 
+
 if ($sms_id)  // если при инклюде скрипта есть $sms_id, то это проверка статуса
 {
     $status = status($host, $port, $login, $password, $sms_id);
-} 
- 
- 
- ////////////////////////////////////
+}
 
- 
+
+////////////////////////////////////
+
+
 /* функция отправки смс */
 
 function send_sms($host, $port, $login, $password, $phone, $text, $sender = false, $wapurl = false ) {
     curl_setopt_array($ch = curl_init(), array(
-    CURLOPT_URL => "http://".$host."/messages/v2/send/".
-        "?phone=" . rawurlencode($phone) .
-        "&text=" . rawurlencode($text) .
-        ($sender ? "&sender=" . rawurlencode($sender) : "") .
-        ($wapurl ? "&wapurl=" . rawurlencode($wapurl) : ""),
+        CURLOPT_URL => "http://".$host."/messages/v2/send/".
+            "?phone=" . rawurlencode($phone) .
+            "&text=" . rawurlencode($text) .
+            ($sender ? "&sender=" . rawurlencode($sender) : "") .
+            ($wapurl ? "&wapurl=" . rawurlencode($wapurl) : ""),
 //      CURLOPT_SAFE_UPLOAD => true, // выдаст респонс в морду клиента - не включать
-      CURLOPT_RETURNTRANSFER => true
-      //CURLOPT_HEADER => true
+        CURLOPT_RETURNTRANSFER => true
+        //CURLOPT_HEADER => true
     ));
     $a = curl_exec($ch);
     $info = curl_getinfo($ch);
     curl_close($ch);
     if (empty($info['http_code']) || $info['http_code']!=200)
-      return false;
-     else 
-      return $a;
+        return false;
+    else
+        return $a;
 }
 
 function send($host, $port, $login, $password, $phone, $text, $sender = false, $wapurl = false )
@@ -93,10 +103,10 @@ function send($host, $port, $login, $password, $phone, $text, $sender = false, $
         "&text=" . rawurlencode($text) .
         ($sender ? "&sender=" . rawurlencode($sender) : "") .
         ($wapurl ? "&wapurl=" . rawurlencode($wapurl) : "") .
-        "  HTTP/1.0\n");  
+        "  HTTP/1.0\n");
     fwrite($fp, "Host: " . $host . "\r\n");
     if ($login != "") {
-        fwrite($fp, "Authorization: Basic " . 
+        fwrite($fp, "Authorization: Basic " .
             base64_encode($login. ":" . $password) . "\n");
     }
     fwrite($fp, "\n");
@@ -125,7 +135,7 @@ function status($host, $port, $login, $password, $sms_id)
         "  HTTP/1.0\n");
     fwrite($fp, "Host: " . $host . "\r\n");
     if ($login != "") {
-        fwrite($fp, "Authorization: Basic " . 
+        fwrite($fp, "Authorization: Basic " .
             base64_encode($login. ":" . $password) . "\n");
     }
     fwrite($fp, "\n");
@@ -137,22 +147,22 @@ function status($host, $port, $login, $password, $sms_id)
     list($other, $responseBody) = explode("\r\n\r\n", $response, 2);
     return $responseBody;
 }
- 
+
 
 
 
 /* функция проверки баланса */
- 
+
 function balance($host, $port, $login, $password)
 {
     $fp = fsockopen($host, $port, $errno, $errstr);
     if (!$fp) {
         return "errno: $errno \nerrstr: $errstr\n";
     }
-   fwrite($fp, "GET /messages/v2/balance/  HTTP/1.0\n");
+    fwrite($fp, "GET /messages/v2/balance/  HTTP/1.0\n");
     fwrite($fp, "Host: " . $host . "\r\n");
     if ($login != "") {
-        fwrite($fp, "Authorization: Basic " . 
+        fwrite($fp, "Authorization: Basic " .
             base64_encode($login. ":" . $password) . "\n");
     }
     fwrite($fp, "\n");
@@ -169,29 +179,29 @@ function balance($host, $port, $login, $password)
 
 
 // в конце сообщим мне ответ от сервера
-push( 
-($phone     ? '+Тел. '.$phone.' ('.$code.')': '').
-($send      ? ' , '.$send : '').
-($balance   ? 'Баланс '.$balance : '').
-($status    ? $status : '').
-($ip        ? ', '.$ip : '')
+push(
+    ($phone     ? '+Тел. '.$phone.' ('.$code.')': '').
+    ($send      ? ' , '.$send : '').
+    ($balance   ? 'Баланс '.$balance : '').
+    ($status    ? $status : '').
+    ($ip        ? ', '.$ip : '')
 );
 function push($text)
 {
     curl_setopt_array($ch = curl_init(), array(
-    CURLOPT_URL => "https://pushall.ru/api.php",
-    CURLOPT_POSTFIELDS => array(
-        "type" => "self",
-        "id" => "1105",
-        "key" => "65d28daa7a2f17944bbde01f49e70c53",
-        "text" => "$text",
-        "icon" => "https://app.motohelplist.com/img/logo_152.png",
-        "title" => "Moto Helplist"//date("Y-m-d H:i:s") 
-      ),
+        CURLOPT_URL => "https://pushall.ru/api.php",
+        CURLOPT_POSTFIELDS => array(
+            "type" => "self",
+            "id" => "1105",
+            "key" => "65d28daa7a2f17944bbde01f49e70c53",
+            "text" => "$text",
+            "icon" => "//app.motohelplist.com/img/logo_152.png",
+            "title" => "Moto Helplist"//date("Y-m-d H:i:s")
+        ),
 //      CURLOPT_SAFE_UPLOAD => true, // выдаст респонс в морду клиента - не включать
-      CURLOPT_RETURNTRANSFER => true
+        CURLOPT_RETURNTRANSFER => true
     ));
-    $a = curl_exec($ch); 
+    $a = curl_exec($ch);
     curl_close($ch);
     return false;
 //    return $a;
