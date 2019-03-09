@@ -765,7 +765,7 @@ function loadpois()
                             tx.executeSql("INSERT OR REPLACE INTO hotels (id, name, lat, lng, phone1, phone2, price, parking, ac,wifi,sauna,description,owner,map_icon,date_upd) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);",
                                 [ hotels[i].id_hotel, hotels[i].name, hotels[i].lat, hotels[i].lng, hotels[i].phone1, hotels[i].phone2, hotels[i].price, hotels[i].parking, hotels[i].ac, hotels[i].wifi, hotels[i].sauna, hotels[i].description, hotels[i].owner, hotels[i].map_icon, hotels[i].ts])
                         });
-                        console.log('hotel -> db');
+                        //console.log('hotel -> db');
                     });
 
                     
@@ -778,7 +778,7 @@ function loadpois()
                             tx.executeSql("INSERT OR REPLACE INTO parkings (id, phone1,phone2,lat,lng,price,access,camera,security,big,description,owner,id_city,map_icon,date_upd) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);",
                                 [ parkings[i].id_parking, parkings[i].phone1, parkings[i].phone2, parkings[i].lat, parkings[i].lng, parkings[i].price, parkings[i].access, parkings[i].camera, parkings[i].security, parkings[i].big, parkings[i].description, parkings[i].owner, parkings[i].id_city, parkings[i].map_icon, parkings[i].ts ])
                         });
-                        console.log('parking -> db');    
+                        //console.log('parking -> db');
                     });
                     
                     
@@ -791,7 +791,7 @@ function loadpois()
                             tx.executeSql("INSERT OR REPLACE INTO places (id,lat,lng,name,id_city,description,owner,photo,map_icon,date_upd) values(?,?,?,?,?,?,?,?,?,?);",
                                 [ places[i].id_place, places[i].lat, places[i].lng, places[i].name, places[i].id_city, places[i].description, places[i].owner, places[i].photo, places[i].map_icon, places[i].ts ])
                         });
-                        console.log('places -> db');        
+                        //console.log('places -> db');
                     });
                     
                     
@@ -804,7 +804,7 @@ function loadpois()
                             tx.executeSql("INSERT OR REPLACE INTO services (id, name, phone1, phone2, lat,lng, electric,weld, stock,tuning, renewal,germans, japanese,chinese, description,owner, id_city, map_icon, date_upd) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);",
                                 [ services[i].id_service, services[i].name, services[i].phone1, services[i].phone2, services[i].lat, services[i].lng, services[i].electric, services[i].weld,services[i].stock, services[i].tuning, services[i].renewal, services[i].germans, services[i].japanese, services[i].chinese, services[i].description, services[i].owner, services[i].id_city, services[i].map_icon, services[i].ts ])
                         });
-                        console.log('services -> db');        
+                        //console.log('services -> db');
                     });
                     
                     
@@ -817,7 +817,7 @@ function loadpois()
                             tx.executeSql("INSERT OR REPLACE INTO tireservices (id, lat, lng, phone1, phone2, podkat, balancer, rims, tire_repair, description, owner, id_city, map_icon, date_upd) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?);",
                                 [ tireservices[i].id_tireservice, tireservices[i].lat, tireservices[i].lng, tireservices[i].phone1, tireservices[i].phone2, tireservices[i].podkat, tireservices[i].balancer, tireservices[i].rims, tireservices[i].tire_repair, tireservices[i].description, tireservices[i].owner, tireservices[i].id_city, tireservices[i].map_icon, tireservices[i].ts])
                         });
-                        console.log('tireservices -> db');        
+                        //console.log('tireservices -> db');
                     });
                     
 
