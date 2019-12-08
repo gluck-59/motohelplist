@@ -1,6 +1,6 @@
 <?php
-//error_reporting(E_ALL);
-//ini_set('display_errors','On');
+error_reporting(E_ALL);
+ini_set('display_errors','On');
 //ini_set('default_charset', 'utf-8');
 
 
@@ -17,7 +17,7 @@ include ("../selectel/SCurl.php");
     
 $secret = 'test';
 
-$f3->set('DEBUG',0);
+$f3->set('DEBUG',1);
 $f3->set('CACHE',TRUE);
 
 if ((float)PCRE_VERSION<7.9)
