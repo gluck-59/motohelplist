@@ -4,9 +4,9 @@
 
 $dbOptions = array(
 	'db_host' => 'localhost',
-	'db_user' => 'motokofr_dbuser', // юзер с ограниченными правами для уменьшения checking_permissions
-	'db_pass' => 'Ji)ouDR2K!1}',
-	'db_name' => 'motokofr_motohelplist'
+	'db_user' => 'USERNAME', // юзер с ограниченными правами для уменьшения checking_permissions
+	'db_pass' => 'DBPASSWORD',
+	'db_name' => 'DBNAME'
 );
 
 /* Database Config End */

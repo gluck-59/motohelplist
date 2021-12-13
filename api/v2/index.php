@@ -26,7 +26,7 @@ if ((float)PCRE_VERSION<7.9)
 // Load configuration
 $f3->config('config.ini');
 
-$f3->set('DB', new \DB\SQL('mysql:host=localhost;port=3306;dbname=motokofr_motohelplist','motokofr_dbuser','Ji)ouDR2K!1}',array(
+$f3->set('DB', new \DB\SQL('mysql:host=localhost;port=3306;dbname=DBNAME','USERNAME','DBPASSWORD',array(
     \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC // generic attribute
 )));
 

@@ -11,7 +11,7 @@ header('X-XRDS-Location: http://' . $_SERVER['SERVER_NAME'] .
      '/api/1/public/services.xrds.php');
 
 // Connect to database
-$db = new PDO('mysql:host=localhost;dbname=motokofr_motohelplist', 'motokofr_dbuser', 'Ji)ouDR2K!1}');
+$db = new PDO('mysql:host=localhost;dbname=DBNAME', 'USERNAME', 'DBPASSWORD');
 
 // Create a new instance of OAuthStore and OAuthServer
 $store = OAuthStore::instance('PDO', array('conn' => $db));
